@@ -9,7 +9,7 @@ Note: use node v14.17.x when building from source
 Clone repo
 
 ```
-git clone https://github.com/neatlab/webwallet.git
+git clone https://github.com/neatio-network/wallet.git
 ```
 
 Dependencies installation
