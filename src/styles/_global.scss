@@ -6,10 +6,10 @@ html {
 body {
 	@include font-size(1.6);
 	@include primary-font;
-	background-image: url('assets/images/world-bg.jpg');
-    background-size: cover;
+	background-image: url('assets/images/wallet-image.png');
+    background-size:cover;
 	background-blend-mode: multiply;
-	background-color: #24292f;
+	//background-color: #496785;
 	//color: $contentPrimary;
 	height: 100vh;
 	line-height: 1.4;
@@ -115,6 +115,11 @@ a {
 	}
 }
 
+.brand {
+	font-size: 16px;
+	font-family: 'Pirulen';
+}
+
 
 button {
 	border: none;
@@ -127,7 +132,7 @@ button {
 	color: #DDD ;
 	border: #00BFFF solid 2px;
 	background-color: transparent;
-	border-radius: 4px;
+	border-radius: 24px;
 	outline: none;
   }
   

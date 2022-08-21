@@ -2,22 +2,26 @@
   <div class="page-container" v-bind:class="{ navActive: navActive }">
     <div class="header">
       <div class="header__content content-container">
-        <div class="header-text">
+        <div class="header-text brand">     
+
+
           <router-link to="/"
-            >NeatWallet</router-link>
+            >NEAT wallet</router-link>
          </div>
 
  
          <div class="nav" v-bind:class="{ 'nav--active': navActive }">
           <div class="nav__item" @click="onClickNav()">
             <a href="https://www.neatio.net" target="_blank">{{
-              $t("WEB SITE")
+              $t("WEBSITE")
             }}</a>
           </div>
-                    <div class="nav" v-bind:class="{ 'nav--active': navActive }">
+            
+            
+            <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
                <router-link to="/edtool">{{
-                 $t("ED TOOLS")
+                 $t("EDTOOLS")
                  }}</router-link>
             </div>
            </div>
@@ -29,6 +33,14 @@
               }}</a>
             </div>
           </div>
+
+           <div class="nav" v-bind:class="{ 'nav--active': navActive }">
+             <div class="nav__item" @click="onClickNav()">
+               <router-link to="https://stake.neatio.net">{{
+                 $t("STAKING")
+                 }}</router-link>
+            </div>
+           </div>
           
 
 
@@ -49,12 +61,12 @@
     <div class="footer">
       <div class="footer__main">
         <div class="footer__col footer__col--left">
-          <!-- GET IN TOUCH | GET INVOLVED -->
-          <!-- <div class="footer__logo">
+     
+          <div class="footer__logo">
             <div class="footer__menu_caption">
-              {{ $t("GET IN TOUCH | GET INVOLVED") }}
+              {{ $t("GET IN TOUCH || GET INVOLVED") }}
             </div>
-          </div> -->
+          </div>
           <div class="footer__title"></div>
           
           <div class="footer__social">
@@ -206,7 +218,7 @@ export default {
   height: 54px;
   width: 100%;
 
-  background: #24292f;
+  background: #000;
   display: flex;
   justify-content: center;
 
