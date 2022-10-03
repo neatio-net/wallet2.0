@@ -25,13 +25,13 @@
 
     <div class="hero__subTitle-ks" v-show="address !== null">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
-      ><span style="color: #00bfff">{{
+      ><span style="color: #00ffff">{{
         $t("pages.createPK.disclaimer3")
       }}</span>
     </div>
     <div class="hero__subTitle-ks" v-show="address !== null">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
-      ><span style="color: #00bfff">{{
+      ><span style="color: #00ffff">{{
         $t("pages.createPK.disclaimer4")
       }}</span>
     </div>

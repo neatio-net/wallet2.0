@@ -325,7 +325,7 @@ export default {
 
   &__item {
     a {
-      color: #00BFFF;
+      color: #00ffff;
       font-size: 20px;
       text-transform: uppercase;
       font-family: "Lato-Regular";
@@ -343,7 +343,7 @@ export default {
       height: 2px;
       left: 50%;
       position: relative;
-      background: #00BFFF;
+      background: #00ffff;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
     }
@@ -354,7 +354,7 @@ export default {
 
     a {
       @include font-size(1.4);
-      color: #00BFFF;
+      color: #00ffff;
       text-decoration: none;
       margin: 0 16px;
 

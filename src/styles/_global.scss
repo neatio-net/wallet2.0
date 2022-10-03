@@ -130,9 +130,9 @@ button {
 	text-transform: uppercase;
 	cursor: pointer;
 	color: #DDD ;
-	border: #00BFFF solid 2px;
+	border: #00ffff solid 2px;
 	background-color: transparent;
-	border-radius: 24px;
+	border-radius: 10px;
 	outline: none;
   }
   
@@ -155,7 +155,7 @@ button {
 	padding-top: 10px;
   }
   .ripple:hover {
-	border-color: #a6ff33;
+	border-color: #496785;
 	background: #24292f radial-gradient(circle, transparent 1%, #24292f 1%) 
 	center/15000%;
   }
@@ -174,7 +174,7 @@ button {
   }
   .ripple2:hover {
 	
-	background: red radial-gradient(circle, transparent 1%, #00BFFF 1%) 
+	background: red radial-gradient(circle, transparent 1%, #00ffff 1%) 
 	center/15000%;
   }
   .ripple2:active {
