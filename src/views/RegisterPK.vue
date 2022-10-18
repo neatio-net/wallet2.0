@@ -120,10 +120,10 @@ const Account = require("neatioapi").account;
 const RPC = require("neatioapi").rpc;
 const Nat = require("neatioapi").nat;
 const Utils = require("neatioapi").utils;
-const URL = "https://rpc.neatio.net";
+const URL = "https://scan.neatio.net";
 const Web3 = require("web3");
 const Abi = require("neatioapi").abi;
-const web3 = new Web3("https://rpc.neatio.net");
+const web3 = new Web3("https://scan.neatio.net");
 
 import axios from "axios";
 import BigNumber from "bignumber.js";
