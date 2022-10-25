@@ -1,7 +1,7 @@
 <template>
   <div class="body-container">
         <div class="hero__logo" v-show="address == null">
-      <img src="../assets/images/logo.svg" alt="" width="100" />
+      <img src="../assets/images/logo.png" alt="" width="100" />
     </div>
     <div class="hero__title-page" v-show="address == null">{{ $t("pages.send.pageName") }} </div>
     <div class="hero__subTitle2" v-show="address == null">Please make sure you are using</div>

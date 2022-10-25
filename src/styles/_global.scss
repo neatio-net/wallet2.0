@@ -6,9 +6,10 @@ html {
 body {
 	@include font-size(1.6);
 	@include primary-font;
-	background-image: url('assets/images/wallet-image.png');
+	// background-image: url('assets/images/wallet-image.png');
     background-size:cover;
 	background-blend-mode: multiply;
+	background-color: #000;
 	//background-color: #496785;
 	//color: $contentPrimary;
 	height: 100vh;

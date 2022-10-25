@@ -81,7 +81,7 @@
                   ><img
                     src="./assets/images/social/dd-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -94,7 +94,7 @@
                   ><img
                     src="./assets/images/social/tg-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -107,7 +107,7 @@
                   ><img
                     src="./assets/images/social/tw-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -120,7 +120,7 @@
                   ><img
                     src="./assets/images/social/fb-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -133,7 +133,7 @@
                   ><img
                     src="./assets/images/social/rd-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -145,7 +145,7 @@
                   ><img
                     src="./assets/images/social/bt-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
 
@@ -158,7 +158,7 @@
                   ><img
                     src="./assets/images/social/gh-icon.png"
                     alt=""
-                    width="32"
+                    width="24"
                 /></a>
               </li>
             </ul>
@@ -221,6 +221,7 @@ export default {
   background: #000;
   display: flex;
   justify-content: center;
+  border-bottom: #00ffff 1px solid;
 
   @include mq-lrg {
     position: fixed;
@@ -328,7 +329,7 @@ export default {
       color: #00ffff;
       font-size: 20px;
       text-transform: uppercase;
-      font-family: "Lato-Regular";
+      font-family: "Pirulen";
       text-decoration: none;
 
       display: inline-block;
