@@ -1,16 +1,27 @@
 <template>
   <div class="body-container">
-    <div class="hero__logo" v-show="address == null">
+
+    <div class="hero__subTitle2" v-show="address == null">
+      Please make sure you are visiting
+      <div class="hero__subTitle7" v-show="address == null">
+      <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
+    </div>
+
+    </div>
+ 
+    
+
+
+
+
+
+    <div class="box1">   
+      
+      <div class="hero__logo" v-show="address == null">
       <img src="../assets/images/logo.png" alt="" width="100" />
     </div>
     <div class="hero__title-page" v-show="address == null">
       {{ $t("pages.send.pageName") }}
-    </div>
-    <div class="hero__subTitle2" v-show="address == null">
-      Please make sure you are using
-    </div>
-    <div class="hero__subTitle3" v-show="address == null">
-      <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
     </div>
 
     <div class="hero__title" v-show="address == null">
@@ -29,12 +40,15 @@
       </div>
     </div>
 
+
+ 
     <div class="hero__walletInfo" v-show="address !== null">
       <div class="hero__subTitle2" v-show="address !== null">
-        Wallet Address
+        WALLET ADDRESS
+   
       </div>
       <div class="hero__title">
-        {{ address }}
+        {{ addry }}
       </div>
       <div class="hero__title">
         <div v-show="balance == null && address !== null">
@@ -51,7 +65,7 @@
           </div>
         </div>
       </div>
-      <div class="hero__subTitle2" v-show="balance !== null">Your Balance</div>
+      <div class="hero__subTitle2" v-show="balance !== null">WALLET BALANCE</div>
       <div class="hero__bal" v-show="balance !== null">
         {{ balance }} <span class="hero__neat">NEAT</span>
       </div>
@@ -63,7 +77,7 @@
         type="text"
         class="hero__input1"
         v-model="addressToSend"
-        placeholder="Destination Address"
+        placeholder="Address"
       />
     </div>
     <div class="hero__title" v-show="address !== null">
@@ -71,7 +85,7 @@
         type="text"
         class="hero__input2"
         v-model="amountToSend"
-        placeholder="Amount To Send"
+        placeholder="Amount"
       />
     </div>
     <div class="hero__title" v-show="address !== null">
@@ -79,34 +93,24 @@
         <button class="ripple" @click="neatSend">SEND</button>
       </div>
     </div>
-    <div
-      class="hero__title"
-      v-show="transactionHash === null && sending !== null"
-    >
-      Executed!
-      <div
-        class="hero__subTitle2"
-        v-show="transactionHash === null && sending !== null"
-      >
-        Transaction Hash ID is:
-      </div>
-      <div
-        class="hero__subTitle3"
-        v-show="transactionHash === null && sending !== null"
-      >
-        {{ sending }}
-      </div>
-    </div>
 
-    <div class="hero__title" v-show="transactionHash !== null">
+
+
+    <div class="hero__title" v-show="txHash !== null">
       Executed!
-      <div class="hero__subTitle2" v-show="transactionHash !== null">
+      <div class="hero__subTitle2" v-show="txHash !== null">
         Transaction Hash ID is:
       </div>
-      <div class="hero__subTitle3" v-show="transactionHash !== null">
-        {{ transactionHash }}
+      <div class="hero__subTitle3" v-show="txHash !== null">
+        <a :href="`https://scan.neatio.net/tx/${txHash}`" >View TX</a>
       </div>
     </div>
+  
+  </div>   
+
+
+
+
   </div>
 </template>
 
@@ -127,12 +131,14 @@ export default {
     return {
       keyInput: null,
       address: null,
+      addry: null,
       balance: null,
       sending: null,
       transactionHash: null,
       amountToSend: null,
       addressToSend: null,
       keyError: null,
+      txHash: null,
     };
   },
 
@@ -147,6 +153,7 @@ export default {
         const privateKey = "0x" + this.keyInput;
         const wallet = Account.fromPrivate(privateKey);
         this.address = wallet.address;
+        this.addry = `${this.address.substr(0, 6)}...${this.address.slice(-4)}`;
         this.privateKey = wallet.privateKey;
         const address = this.address;
         const DATA = {
@@ -165,7 +172,7 @@ export default {
                   Nat.toString(response.data.result)
                 ))
             );
-        }, 1000);
+        }, 500);
       }
     },
 
@@ -175,9 +182,7 @@ export default {
       const addressFrom = account.address;
       const amountToSend = this.amountToSend;
       const addressTo = this.addressToSend;
-       console.log(
-          `Sending... ${addressFrom} to ${addressTo}`
-       );
+      console.log(`Sending... ${addressFrom} to ${addressTo}`);
 
       const createTransaction = await web3.eth.accounts.signTransaction(
         {
@@ -188,18 +193,24 @@ export default {
         },
         privateKey
       );
-      
-      const sending = 'Sending...'
-      console.log (sending)
+
+      const sending = "Sending...";
+      console.log(sending);
 
       const txHash = await web3.eth.sendSignedTransaction(
         createTransaction.rawTransaction
       );
 
-       console.log(
-          `Transaction confirmed: ${txHash.transactionHash}`
-       );
+      const transactionHash = txHash.transactionHash;
+      this.txHash = transactionHash;
+
+      console.log(`Transaction confirmed: ${txHash.transactionHash}`);
+      this.txHash = txHash.transactionHash;
     },
+
+   
+
+    
   },
 };
 </script>
