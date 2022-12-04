@@ -12,27 +12,6 @@
       >
         <div class="cards-grid">
 
-          <!-- <div class="cards-grid__item">
-            <div class="cards-grid__graphic">
-              <div class="cards-grid__icon cards-grid__icon--create">
-                <span></span>
-              </div>
-            </div>
-            <div class="cards-grid__title">
-              {{ $t("Wallet Information") }}
-            </div>
-            <div class="cards-grid__description">
-              <div class="hero__title2">
-                <router-link to="/walletinfo"
-                  ><button class="ripple">OPEN wallet</button></router-link
-                >
-              </div>
-            </div>
-          </div> -->
-
-
-
-
           <div class="cards-grid__item">
             <div class="cards-grid__graphic">
               <div class="cards-grid__icon cards-grid__icon--send">
