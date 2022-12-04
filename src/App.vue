@@ -75,7 +75,7 @@
               <!-- DISCORD -->
               <li class="">
                 <a
-                  href="http://discord.neatio.net"
+                  href="http://dd.neatio.net"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -152,7 +152,7 @@
               <!-- GITHUB -->
               <li class="">
                 <a
-                  href="https://github.com/neatlab/"
+                  href="https://github.com/neatio-network/"
                   target="_blank"
                   rel="noopener"
                   ><img
@@ -379,35 +379,6 @@ export default {
 }
 
 
-// .lang-select {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   @include mq-lrg {
-//     padding: 10px;
-//   }
-
-//   &__btn {
-//     cursor: pointer;
-//     color: $contentLight;
-//     border: 1px solid $divider;
-//     font-size: 10px;
-//     margin: 2px;
-//     display: inline-flex;
-//     height: 20px;
-//     width: 20px;
-//     justify-content: center;
-//     align-items: center;
-
-//     @include mq-lrg {
-//       @include font-size(1.3);
-//       margin: 4px;
-//       height: 30px;
-//       width: 30px;
-//     }
-//   }
-// }
 
 .nav-toggle {
   width: 40px;
