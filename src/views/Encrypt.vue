@@ -8,7 +8,7 @@
     <div class="hero__subTitle3">
       <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
     </div>
-    <div class="hero__title" v-show="address == null">
+    <div class="hero__title" v-show="address == ''">
       <input
         type="password"
         class="hero__inputs"
@@ -17,15 +17,15 @@
       />
     </div>
 
-    <div class="hero__subTitle-ks" v-show="address == null">
+    <div class="hero__subTitle-ks" v-show="address == ''">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
       >{{ $t("pages.createKS.disclaimer4") }}
     </div>
-    <div class="hero__subTitle-ks" v-show="address == null">
+    <div class="hero__subTitle-ks" v-show="address == ''">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
       >{{ $t("pages.createKS.disclaimer5") }}
     </div>
-    <div class="hero__title-ks" v-show="address == null">
+    <div class="hero__title-ks" v-show="address == ''">
       <input
         type="password"
         class="hero__input-ks"
@@ -33,7 +33,7 @@
         placeholder=" Set your Password"
       />
     </div>
-    <div class="hero__title" v-show="address == null">
+    <div class="hero__title" v-show="address == ''">
       <input
         type="password"
         class="hero__input-ks"
@@ -42,7 +42,7 @@
       />
     </div>
 
-    <div class="hero__title" v-show="address !== null">
+    <div class="hero__title" v-show="address !== ''">
       <div class="hero__subTitle">
         {{ $t("This wallet PrivateKey successfully encrypted!") }}
       </div>
@@ -52,24 +52,24 @@
       <span style="color: #dddddd">{{ address }}</span>
     </div>
 
-    <div class="hero__title" v-show="address == null">
-      <div class="hero__title-ks" v-show="address == null">
+    <div class="hero__title" v-show="address == ''">
+      <div class="hero__title-ks" v-show="address == ''">
         <button class="ripple" @click="genWallet">ENCRYPT</button>
       </div>
     </div>
 
-    <div v-show="address == null">{{ error1 }}</div>
-    <div v-show="address == null">{{ error2 }}</div>
-    <div v-show="address == null">{{ error3 }}</div>
+    <div v-show="address == ''">{{ error1 }}</div>
+    <div v-show="address == ''">{{ error2 }}</div>
+    <div v-show="address == ''">{{ error3 }}</div>
 
-    <div class="hero__subTitle-ks" v-show="address !== null">
+    <div class="hero__subTitle-ks" v-show="address !== ''">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
       ><span style="color: #00ffff">{{
         $t("pages.createKS.disclaimer2")
       }}</span>
     </div>
 
-    <div class="hero__subTitle-ks" v-show="address !== null">
+    <div class="hero__subTitle-ks" v-show="address !== ''">
       <b-icon-info-square-fill font-scale="0.8"></b-icon-info-square-fill
       ><span style="color: #00ffff">{{
         $t("pages.createKS.disclaimer3")
@@ -80,7 +80,7 @@
       <div class="hero__title-ks">
         <button
           class="ripple"
-          v-show="address !== null"
+          v-show="address !== ''"
           @click="downloadPrivKey"
         >
           DOWNLOAD
@@ -99,13 +99,13 @@ export default {
 
   data() {
     return {
-      address: null,
-      privKey: null,
+      address: '',
+      privKey: '',
       pass1: "",
       pass2: "",
-      error1: null,
-      error2: null,
-      error3: null,
+      error1: '',
+      error2: '',
+      error3: '',
     };
   },
 
