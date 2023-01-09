@@ -6,7 +6,7 @@
 
 
           <router-link to="/"
-            >NEAT wallet</router-link>
+            >NEAT wallet <div class="beta">beta</div></router-link>
          </div>
 
  
@@ -277,6 +277,12 @@ export default {
       left: 16px;
     }
   }
+}
+
+.beta {
+  color: #00ffff;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
 }
 
 .header-text {
