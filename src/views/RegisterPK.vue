@@ -176,31 +176,26 @@ export default {
         const privateKey = "0x" + this.keyInput;
         const wallet = Account.fromPrivate(privateKey);
         this.address = wallet.address;
+        this.addry = `${this.address.substr(0, 6)}...${this.address.slice(-4)}`;
         this.privateKey = wallet.privateKey;
         const address = this.address;
         const DATA = {
           jsonrpc: "2.0",
-          method: "neat_getBalanceDetail",
-          params: [`${address}`, "latest", true],
+          method: "neat_getBalance",
+          params: [`${address}`, "latest"],
           id: 1,
         };
-     
-          axios.get(URL, DATA, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((response) => {
-            (this.balance = Utils.toNEAT(
-              Nat.toString(response.data.result.balance)
-            )),
-              (this.staked = Utils.toNEAT(
-                Nat.toString(response.data.result.delegateBalance)
-              )),
-              (this.reward = Utils.toNEAT(
-                Nat.toString(response.data.result.rewardBalance)
-              ));
-          });
- 
+
+        setInterval(() => {
+          axios
+            .post(URL, DATA, { "Content-type": "application/json" })
+            .then(
+              (response) =>
+                (this.balance = Utils.toNEAT(
+                  Nat.toString(response.data.result)
+                ))
+            );
+        }, 500);
       }
     },
 
