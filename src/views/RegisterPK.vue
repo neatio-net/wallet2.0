@@ -33,21 +33,33 @@
       {{ address }}
     </div>
 
-
-    <div class="hero__subTitle2" v-show="balance !== null" >
-      Available balance
-    </div>
+<div class="hero__fullbalance">
+  <div class="hero__subTitle2" v-show="balance !== null" > Available balance  </div>
     <div class="hero__bal" v-show="balance !== null">
       {{ balance }}<span class="hero__neat">NEAT</span>
     </div>
-    <div class="hero__subTitle2" v-show="staked !== null">Tokens In stake</div>
+    <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
     <div class="hero__bal2" v-show="balance !== null">
       {{ staked }} <span class="hero__neat">NEAT</span>
     </div>
-    <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Reward</div>
+    <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Rewards</div>
     <div class="hero__bal2" v-show="balance !== null">
       {{ reward }} <span class="hero__neat">NEAT</span>
     </div>
+</div>
+
+    <!-- <div class="hero__subTitle2" v-show="balance !== null" > Available balance  </div>
+    <div class="hero__bal" v-show="balance !== null">
+      {{ balance }}<span class="hero__neat">NEAT</span>
+    </div>
+    <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
+    <div class="hero__bal2" v-show="balance !== null">
+      {{ staked }} <span class="hero__neat">NEAT</span>
+    </div>
+    <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Rewards</div>
+    <div class="hero__bal2" v-show="balance !== null">
+      {{ reward }} <span class="hero__neat">NEAT</span>
+    </div> -->
 
     <div class="hero__title" v-show="reward != '0' && reward !== null">
       <input
@@ -78,26 +90,26 @@
         placeholder="Validator Private Key  (64 char long)"
       />
     </div>
-    <div class="hero__title" v-show="staked === '0' && staked !== null">
+    <!-- <div class="hero__title" v-show="staked === '0' && staked !== null">
       <input
         type="text"
         class="hero__input2"
         v-model="valCommission"
         placeholder="Commission  ( 0 to 100 )"
       />
-    </div>
+    </div> -->
 
     <div class="hero__title" v-show="staked === '0' && staked !== null">
       <input
         type="text"
         class="hero__input2"
         v-model="valAmountToStake"
-        placeholder="Amount To Stake"
+        placeholder="Amount (min. 50,000)"
       />
     </div>
     
 
-    <div class="hero__title" v-show="staked === '0' && staked !== null">
+    <div class="hero__title" v-show="staked == '0' && staked !== null">
       <button class="ripple" @click="neatReg">REGISTER</button>
     </div>
 
@@ -135,6 +147,7 @@ export default {
       keyInput: null,
       address: null,
       balance: null,
+      balanceDetails: null,
       staked: null,
       reward: null,
       txHash: null,
@@ -181,21 +194,29 @@ export default {
         const address = this.address;
         const DATA = {
           jsonrpc: "2.0",
-          method: "neat_getBalance",
-          params: [`${address}`, "latest"],
+          method: "neat_getBalanceDetail",
+          params: [`${address}`, "latest", true],
           id: 1,
         };
 
-        setInterval(() => {
+        // setInterval(() => {
           axios
             .post(URL, DATA, { "Content-type": "application/json" })
             .then(
               (response) =>
-                (this.balance = Utils.toNEAT(
-                  Nat.toString(response.data.result)
-                ))
-            );
-        }, 500);
+              {
+          (this.balance = Utils.toNEAT(
+            Nat.toString(response.data.result.balance)
+          )),
+            (this.staked = Utils.toNEAT(
+              Nat.toString(response.data.result.delegateBalance)
+            )),
+            (this.reward = Utils.toNEAT(
+              Nat.toString(response.data.result.rewardBalance)
+            ));
+        });
+
+           // }, 500);
       }
     },
 
@@ -221,7 +242,7 @@ export default {
 
       const validatorData = Abi.encodeParams(
         ["bytes", "bytes", "uint8"],
-        [validatorPubKey, validatorSignature, 10]
+        [validatorPubKey, validatorSignature, 15]
       );
       const createTransaction = await web3.eth.accounts.signTransaction(
         {
