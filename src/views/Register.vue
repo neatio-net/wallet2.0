@@ -30,7 +30,7 @@
             </div>
           </div>
 
-          <!-- <div class="cards-grid__item">
+          <div class="cards-grid__item">
             <div class="cards-grid__graphic">
               <div class="cards-grid__icon cards-grid__icon--encrypted">
                 <span></span>
@@ -46,7 +46,7 @@
                 >
               </div>
             </div>
-          </div> -->
+          </div>
 
 
         </div>

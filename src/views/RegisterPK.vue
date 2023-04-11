@@ -9,7 +9,7 @@
       Please make sure you are using
     </div>
     <div class="hero__subTitle3" v-show="address == null">
-      <b-icon-lock-fill></b-icon-lock-fill> https://vault.neatio.net
+      <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
     </div>
 
     <div class="hero__title" v-show="address == null">
@@ -34,7 +34,7 @@
     </div>
 
 
-    <div class="hero__subTitle2" v-show="balance !== null">
+    <div class="hero__subTitle2" v-show="balance !== null" >
       Available balance
     </div>
     <div class="hero__bal" v-show="balance !== null">
@@ -78,14 +78,14 @@
         placeholder="Validator Private Key  (64 char long)"
       />
     </div>
-    <!-- <div class="hero__title" v-show="staked === '0' && staked !== null">
+    <div class="hero__title" v-show="staked === '0' && staked !== null">
       <input
         type="text"
         class="hero__input2"
         v-model="valCommission"
         placeholder="Commission  ( 0 to 100 )"
       />
-    </div> -->
+    </div>
 
     <div class="hero__title" v-show="staked === '0' && staked !== null">
       <input
@@ -116,14 +116,13 @@
 
 <script>
 const Account = require("neatioapi").account;
-
 const RPC = require("neatioapi").rpc;
 const Nat = require("neatioapi").nat;
 const Utils = require("neatioapi").utils;
-const URL = "https://scan.neatio.net";
+const URL = "https://rpc.neatio.net";
 const Web3 = require("web3");
 const Abi = require("neatioapi").abi;
-const web3 = new Web3("https://scan.neatio.net");
+const web3 = new Web3("https://rpc.neatio.net");
 
 import axios from "axios";
 import BigNumber from "bignumber.js";

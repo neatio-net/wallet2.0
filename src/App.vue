@@ -36,8 +36,15 @@
 
            <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
-               <router-link to="https://stake.neatio.net">{{
+               <a href="https://stake.neatio.net">{{
                  $t("STAKING")
+                 }}</a>
+            </div>
+           </div>
+           <div class="nav" v-bind:class="{ 'nav--active': navActive }">
+             <div class="nav__item" @click="onClickNav()">
+              <router-link to="/register-pk">{{
+                 $t("VERIFIERS")
                  }}</router-link>
             </div>
            </div>

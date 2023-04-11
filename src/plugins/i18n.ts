@@ -28,7 +28,7 @@ const messages = {
             cardChoose: `What's your wallet type?`,
             },
       register: {
-            pageName: `REGISTER`,
+            pageName: `Register Validator`,
             cardChoose: `What's your wallet type?`,
             },
       edtool: {
