@@ -110,10 +110,10 @@ const KeyStore = require("neatioapi").keystore;
 const Transaction = require("neatioapi").transaction;
 const Nat = require("neatioapi").nat;
 const Utils = require("neatioapi").utils;
-const URL = "https://scan.neatio.net";
+const URL = "https://rpc.neatio.net";
 const RPC = require("neatioapi").rpc;
 const Web3 = require('web3');
-const web3 = new Web3('https://scan.neatio.net');
+const web3 = new Web3('https://rpc.neatio.net');
 const Accounts = require('web3-eth-accounts').accounts;
 const Tx = require('ethereumjs-tx').Transaction;
 

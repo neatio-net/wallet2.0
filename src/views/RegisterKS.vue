@@ -137,7 +137,7 @@ const RPC = require("neatioapi").rpc;
 const Nat = require("neatioapi").nat;
 const Abi = require("neatioapi").abi;
 const Utils = require("neatioapi").utils;
-const URL = "https://scan.neatio.net";
+const URL = "https://rpc.neatio.net";
 
 import axios from "axios";
 

@@ -5,8 +5,6 @@
     </div>
 
     <div class="hero__title-page">{{ $t("pages.register.pageName") }}</div>
-    <!-- <div class="hero__title">{{ $t("pages.register.cardChoose") }}</div> -->
-
     <div class="section section--light">
       <div
         class="section__content section__content--thin-top content-container"

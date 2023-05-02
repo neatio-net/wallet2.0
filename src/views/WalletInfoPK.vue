@@ -63,7 +63,7 @@
 const Account = require("neatioapi").account;
 const Nat = require("neatioapi").nat;
 const Utils = require("neatioapi").utils;
-const URL = "https://scan.neatio.net";
+const URL = "https://rpc.neatio.net";
 
 
 
