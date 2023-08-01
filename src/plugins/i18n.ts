@@ -16,7 +16,7 @@ const messages = {
     pages: {
       // HOME
       home: {
-        pageName: `NEATIO WEB WALLET`,
+        pageName: `Neatio Wallet is a simple, secure, non-custodial browser wallet.`,
         pageDesc: `This is NEAT Web Wallet`,
         },
       create: {
