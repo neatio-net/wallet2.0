@@ -11,7 +11,6 @@ import Send from "../views/Send.vue";
 import SendPK from "../views/SendPK.vue";
 import SendKS from "../views/SendKS.vue";
 import WalletInfo from "../views/WalletInfo.vue";
-import WalletInfoPK from "../views/WalletInfoPK.vue";
 import WalletInfoKS from "../views/WalletInfoKS.vue";
 import Register from "../views/Register.vue";
 import RegisterPK from "../views/RegisterPK.vue";
@@ -52,11 +51,7 @@ const routes: Array<RouteConfig> = [
     name: "WalletInfo",
     component: WalletInfo
   },
-  {
-    path: "/walletinfo-pk",
-    name: "WalletInfoPK",
-    component: WalletInfoPK
-  },
+
   {
     path: "/walletinfo-ks",
     name: "WalletInfoKS",
