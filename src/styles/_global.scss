@@ -1,17 +1,13 @@
 html {
 	height: 100vh;
+
 	
 }
 
 body {
 	@include font-size(1.6);
 	@include primary-font;
-	// background-image: url('assets/images/wallet-image.png');
-    background-size:cover;
-	background-blend-mode: multiply;
-	background-color: #000;
-	//background-color: #496785;
-	//color: $contentPrimary;
+	background: linear-gradient(to left,#24243e, #302b63, #24243e);
 	height: 100vh;
 	line-height: 1.4;
     
@@ -117,21 +113,20 @@ a {
 }
 
 .brand {
-	font-size: 16px;
-	font-family: 'Pirulen';
+	font-size: 24px;
+	font-family: 'Anita';
 }
 
 
 button {
 	border: none;
 	padding: 10px 17px;
-	font-size: 4rem;
+	font-size: 6rem;
 	min-width: 140px;
-	font-family: Lato-Regular;
+	font-family: Anita;
 	text-transform: uppercase;
 	cursor: pointer;
-	color: #DDD ;
-	border: #00ffff solid 2px;
+	color: #000 ;
 	background-color: transparent;
 	border-radius: 10px;
 	outline: none;
