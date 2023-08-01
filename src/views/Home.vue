@@ -1,8 +1,8 @@
 <template>
   <div class="body-container">
-    <div class="hero__logo">
+    <!-- <div class="hero__logo">
       <img src="../assets/images/logo.png" alt="" width="100" />
-    </div>
+    </div> -->
     <div class="hero__title-page">{{ $t("pages.home.pageName") }}</div>
     <div class="section section--light">
       <div
@@ -17,12 +17,12 @@
               </div>
             </div>
             <div class="cards-grid__title">
-              {{ $t("Access your existing wallet to transfer $NEAT") }}
+              {{ $t("Access your existing wallet") }}
             </div>
             <div class="cards-grid__description">
               <div class="hero__title2">
                 <router-link to="/send"
-                  ><button class="ripple">OPEN WALLET</button></router-link
+                  ><button class="ripple">ACCESS WALLET</button></router-link
                 >
               </div>
             </div>
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="cards-grid__title">
-              {{ $t("Create a new wallet to send and receive $NEAT") }}
+              {{ $t("Create a brand new wallet") }}
             </div>
             <div class="cards-grid__description">
               <div class="hero__title2">
