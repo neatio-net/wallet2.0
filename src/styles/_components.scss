@@ -158,7 +158,7 @@
     line-height: 1.3;
     padding-bottom: 20px;
     position: relative;
-    color: #00ffff;
+    color: #fff;
     align-items: center;
     
 
@@ -212,12 +212,12 @@
 
   &__title-page {
     @include font-size(2.6);
-    font-family: "Pirulen";
+    font-family: "Anita";
     font-weight: 420;
     line-height: 1.3;
     padding-bottom: 0.7em;
     position: relative;
-    color: #00ffff;
+    color: #fff;
     align-items: center;
     
 
@@ -312,7 +312,7 @@
 
   &__subTitle {
     @include font-size(1.8);
-    font-family: "Pirulen";
+    font-family: "Anita";
     line-height: 1.8;
     position: relative;
     color: #00ffff;   
@@ -386,8 +386,8 @@
     margin: auto;
     width: 75vw;
     max-width: 500px;
-    font-family: "Pirulen";
-    background-color: #000;
+    font-family: "Anita";
+    background-color: linear-gradient(to left,#24243e, #302b63, #24243e);
     border-style: solid;
     border-color: #00ffff;
     text-align: center;
@@ -401,7 +401,7 @@
     margin: auto;
     width: 66vw;
     max-width: 320px;
-    font-family: "Pirulen";
+    font-family: "Anita";
     background-color: transparent;
     border-style: solid;
     border-color: #00ffff;
@@ -416,7 +416,7 @@
     @include font-size(1.2);
     width: 66vw;
     max-width: 500px;
-    font-family: "Pirulen";
+    font-family: "Anita";
     background-color: #000;
     border-style: solid;
     margin: 10px;
@@ -436,7 +436,7 @@
     margin: auto;
     width: 33vw;
     max-width: 300px;
-    font-family: "Pirulen";
+    font-family: "Anita";
     background-color: #000;
     border-style: solid;
     border-color: #ddd;
@@ -653,9 +653,9 @@
     background-color: #24292f;
     margin-left: auto;
     margin-right: auto;
-    border: #00ffff;
-    border-style: solid;
-    border-width: 1px;
+    // border: #00ffff;
+    // border-style: solid;
+    // border-width: 1px;
     @media screen and (max-width: 480px) {
       align-items: center;
     
@@ -727,15 +727,16 @@
 
 .ripple {
 	@include font-size(1.5);
+  font-weight: bold;
 	background-position: center;
 	transition: background 0.2s;
 	padding-top: 10px;
-  background-color: #000;
+  background: linear-gradient(to left, #46bbf4, #2472fc);
   
   }
   .ripple:hover {
-    color:#DDDDDD; 
-
+    color:#fff; 
+    font-weight: normal;
 	text-transform: uppercase;
 	background: #24292f radial-gradient(circle, transparent 1%, #24292f 1%) 
 	center/15000%; 
@@ -992,13 +993,13 @@
     padding: 36px;
 
 
-    border: 1px solid #00ffff;
+  
     border-radius: 10px;
-    box-shadow: 0 0 40px #00bfff67;
+    box-shadow: 0 10px 40px #000;
 
     border-radius: 10px;
     margin: 20px 40px 0px 40px;
-    background-color: #000; //496785
+    background-color: transparent; //496785
 
     @include mq-xsml {
       max-width: none;
@@ -1179,7 +1180,7 @@ margin-top: 20px;
 
   &__menu_caption {
     @include font-size(1.3);
-    font-family: "Pirulen";
+    font-family: "Anita";
     font-weight: 200;
     margin-bottom: 20px;
     line-height: 1.6;
