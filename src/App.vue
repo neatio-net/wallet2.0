@@ -6,7 +6,7 @@
 
 
           <router-link to="/"
-            >NEAT wallet <div class="beta">beta</div></router-link>
+            >Wallet <div class="beta">beta</div></router-link>
          </div>
 
  
@@ -225,7 +225,7 @@ export default {
   height: 54px;
   width: 100%;
 
-  background: #000;
+  background: linear-gradient(to left,#24243e, #302b63, #24243e);
   display: flex;
   justify-content: center;
   border-bottom: #00ffff 1px solid;
@@ -342,7 +342,7 @@ export default {
       color: #00ffff;
       font-size: 20px;
       text-transform: uppercase;
-      font-family: "Pirulen";
+      font-family: "Anita";
       text-decoration: none;
 
       display: inline-block;
