@@ -3,8 +3,9 @@
     <!-- <div class="hero__logo">
       <img src="../assets/images/logo.png" alt="" width="100" />
     </div> -->
-    <div class="hero__title-page">{{ $t("pages.home.pageName") }}</div>
-    <div class="section section--light">
+    
+    <div class="hero__wallet-description">{{ $t("pages.home.pageName") }}</div>
+     <div class="section section--light">
       <div
         class="section__content section__content--thin-top content-container"
       >
@@ -48,7 +49,12 @@
         </div>
       </div>
     </div>
+    <div class="wallet-terms">
+      By using this application you agree to the Terms of Use.
+
+    </div>
   </div>
+  
 </template>
 
 <script>
