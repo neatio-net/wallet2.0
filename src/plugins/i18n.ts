@@ -31,15 +31,12 @@ const messages = {
             pageName: `Register Validator`,
             cardChoose: `What's your wallet type?`,
             },
-      edtool: {
-              pageName: `EDTOOLS`,
-              cardChoose: `What would you like to do?`,
-              },
+
               swap: {
                 pageName: `SWAPING`,
                 cardChoose: `What's your wallet type?`,
                 },
-      // MINTING
+
       about: {
         pageTitle: `Terms and Conditions, Risks Of Use and Disclaimer`,
         pageTitle2: `Who we are?`,
