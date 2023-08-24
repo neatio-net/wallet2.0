@@ -17,7 +17,7 @@ const messages = {
       // HOME
       home: {
         pageName: `Neatio Wallet is a simple, secure, non-custodial browser wallet.`,
-        pageDesc: `This is NEAT Web Wallet`,
+        pageDesc: `This is NIO Web Wallet`,
         },
       create: {
           pageName: `CREATION`,
@@ -70,7 +70,7 @@ const messages = {
           `These
           Terms and Conditions constitute a legally binding agreement made between you,
           whether personally or on behalf of an entity (“you”) and, Neatio
-          and/or NEAT (“we,” “us” or “our”), concerning your
+          and/or NIO (“we,” “us” or “our”), concerning your
           access to and use of the www.neatio.net website
           and the subdomains “wallet.neatio.net” and
           “scann.neatio.net” as well as any other media form, media
@@ -121,9 +121,9 @@ const messages = {
           `RISKS OF USE`,
  
           `The risk associated with
-          the Ethernet core agreement since Neatio (NEAT) is based on the Ethernet
+          the Ethernet core agreement since Neatio (NIO) is based on the Ethernet
           protocol development, any failure, unpredictable functional problems, or
-          attacks that occur in any Ethernet core protocol can cause Neatio (NEAT) or our
+          attacks that occur in any Ethernet core protocol can cause Neatio (NIO) or our
           applications to stop working or can behave in an unpredictable manner.
            
           The risk associated with
@@ -154,7 +154,7 @@ const messages = {
  
           `Our website is used only for the purpose
           of conveying information and does not constitute an opinion on the trading of
-          Neatio (NEAT) cryptocurrency. Any such proposal shall be carried out under a
+          Neatio (NIO) cryptocurrency. Any such proposal shall be carried out under a
           trustworthy term and with the permission of the applicable securities law and
           other relevant laws. The above information or analysis shall not constitute
           investment decisions or specific recommendations.
@@ -168,7 +168,7 @@ const messages = {
           of the risks of the cryptocurrency platform. Once the investor participates in
           the investment, he / she will understand and accept the risk of the project and
           be willing to bear all the corresponding results or consequences.
-          We expressly disclaims that Neatio (NEAT) will not bear
+          We expressly disclaims that Neatio (NIO) will not bear
           any direct or indirect damages resulting from any participation in our project,
           including this website and any software and/or materials provided on our
           websites and social media channels.
