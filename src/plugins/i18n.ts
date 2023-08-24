@@ -58,9 +58,6 @@ const messages = {
         feature4SubTitle: `Neatio is ECO Friendly.`,
         feature4Description: `The Neatio network is based on the PoS ( Proof-Of-Stake) mechanism and is maintained by its validators, making it energy efficient, thus environmentally friendly. At Neatio you don’t need expensive mining equipment since you can run a Neatio network node on an average laptop or a $10 Cloud Server (VPS).`,
 
-        feature5Title: `HANDY`,
-        feature5SubTitle: `Neatio is User Friendly.`,
-        feature5Description: `We also decided to use only 2 decimals for a more pleasant and familiar user experience since everyone is used to the traditional money system rather than the crypto divisibility system. In theory it is the same thing but psychologically is not. Why?  Because people are expecting to see a price of, let’s say, 4.99 USD for a coffee rather than 0.00009999 BTC or 0.0033000000000000 ETH.`,
       },
       createPK: {        
         walletAddress: `Your wallet address is:`,
