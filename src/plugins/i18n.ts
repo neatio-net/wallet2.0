@@ -14,7 +14,6 @@ const messages = {
     },
 
     pages: {
-      // HOME
       home: {
         pageName: `Neatio Wallet is a simple, secure, non-custodial browser wallet.`,
         pageDesc: `This is NIO Web Wallet`,
@@ -62,7 +61,6 @@ const messages = {
 
       },
 
-      // TERMS
       terms: {
         pageTitle: `Terms and Conditions, Risks Of Use and Disclaimer`,
         listItems: [
