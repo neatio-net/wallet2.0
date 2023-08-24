@@ -49,10 +49,6 @@ const messages = {
         feature2SubTitle: `Neatio is secure. Ultra Secure.`,
         feature2Desc: `Making full use of the advantages of the blockchain technology and in combination with the BFT (Byzantine Fault Tolerance) consensus protocol, Neatio is an ultra secure payment solution, since the transactions are confirmed as soon as they are included in the block. With Neatio there is no need for block confirmations, making it ideal for merchants in day-to-day use and in our crazy, fast-forward lives that we are living today.`,
         
-        feature3Title: `SCALABLE`,
-        feature3SubTitle: `Neatio is highly scalable.`,
-        feature3Desc: `As mentioned before, Neatio blockchain is composed of one main chain and multiple derived side-chains all connected together acting like one single blockchain network, making the platform ultra scalable. In theory there is no limit on how many side-chains can run on the network. In our tests we managed to hit a peak of over 3500 TPS on the main-chain only, which we think is more than enough for today's scalability requirements.`,
-
 
 
       },
