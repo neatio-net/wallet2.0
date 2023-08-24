@@ -41,16 +41,6 @@ const messages = {
         pageTitle: `Terms and Conditions, Risks Of Use and Disclaimer`,
         pageTitle2: `Who we are?`,
         pageSubTitle2: `We are a team of software engineers and developers passionate about blockchain technology with a strong belief in the freedom and privacy of each individual. Our team is a perfect blend of core developers and UX/UI designers. We all love Bitcoin since it introduced us the amazing world of blockchain technology, we also love Ethereum and the smart contract technology but since both BTC and ETH became store of value rather than a peer-to-peer electronic cash system (like it was stated in the Bitcoin whitepaper by Satoshi Nakamoto) we decided to bring Neatio to life.`,
-       
-
-
-
-        feature2Title: `SECURE`,
-        feature2SubTitle: `Neatio is secure. Ultra Secure.`,
-        feature2Desc: `Making full use of the advantages of the blockchain technology and in combination with the BFT (Byzantine Fault Tolerance) consensus protocol, Neatio is an ultra secure payment solution, since the transactions are confirmed as soon as they are included in the block. With Neatio there is no need for block confirmations, making it ideal for merchants in day-to-day use and in our crazy, fast-forward lives that we are living today.`,
-        
-
-
       },
       createPK: {        
         walletAddress: `Your wallet address is:`,
