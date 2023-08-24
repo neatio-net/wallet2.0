@@ -71,9 +71,9 @@ const messages = {
           Terms and Conditions constitute a legally binding agreement made between you,
           whether personally or on behalf of an entity (“you”) and, Neatio
           and/or NEAT (“we,” “us” or “our”), concerning your
-          access to and use of the www.neatio.org website
-          and the subdomains “wallet.neatio.org” and
-          “scann.neatio.org” as well as any other media form, media
+          access to and use of the www.neatio.net website
+          and the subdomains “wallet.neatio.net” and
+          “scann.neatio.net” as well as any other media form, media
           channel, mobile website or mobile application related, linked, or otherwise
           connected thereto (collectively, the “website”).
           You
@@ -105,14 +105,14 @@ const messages = {
           registration requirement within such jurisdiction or country.
           
           
-          The materials on “www.neatio.org” and/or
-          the subdomains “wallet.neatio.org” and “scanner.neatio.org” website are
-          provided on the “as is” basis. The website “www.neatio.org” and their
+          The materials on “www.neatio.net” and/or
+          the subdomains “wallet.neatio.net” and “scanner.neatio.net” website are
+          provided on the “as is” basis. The website “www.neatio.net” and their
           developers and/or the contributors makes no warranties, expressed or implied,
           and hereby disclaims and negates all other warranties including, without
           limitation, implied warranties or conditions of merchantability, fitness for a
           particular purpose, or noninfringement of intellectual property or other
-          violation of rights. Also  “www.neatio.org” does not warrant or make any
+          violation of rights. Also  “www.neatio.net” does not warrant or make any
           representations concerning the accuracy, likely results, or reliability of the
           use of the materials on its websites or otherwise relating to such materials or
           on any websites linked to this website.
