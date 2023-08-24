@@ -54,9 +54,6 @@ const messages = {
         feature3Desc: `As mentioned before, Neatio blockchain is composed of one main chain and multiple derived side-chains all connected together acting like one single blockchain network, making the platform ultra scalable. In theory there is no limit on how many side-chains can run on the network. In our tests we managed to hit a peak of over 3500 TPS on the main-chain only, which we think is more than enough for today's scalability requirements.`,
 
 
-        feature4Title: `ECO`,
-        feature4SubTitle: `Neatio is ECO Friendly.`,
-        feature4Description: `The Neatio network is based on the PoS ( Proof-Of-Stake) mechanism and is maintained by its validators, making it energy efficient, thus environmentally friendly. At Neatio you don’t need expensive mining equipment since you can run a Neatio network node on an average laptop or a $10 Cloud Server (VPS).`,
 
       },
       createPK: {        
