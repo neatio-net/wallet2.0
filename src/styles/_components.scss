@@ -998,8 +998,6 @@
 .cards-grid {
   display: flex;
   justify-content: center;
-  // flex-wrap: wrap;
-  // /padding: 30px;
   @include mq-sml {
     width: auto;
     height: auto;
