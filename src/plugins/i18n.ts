@@ -26,11 +26,6 @@ const messages = {
             pageName: `OPENING WALLET`,
             cardChoose: `What's your wallet type?`,
             },
-      register: {
-            pageName: `Register Validator`,
-            cardChoose: `What's your wallet type?`,
-            },
-
               swap: {
                 pageName: `SWAPING`,
                 cardChoose: `What's your wallet type?`,
