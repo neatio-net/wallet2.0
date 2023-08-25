@@ -6,7 +6,11 @@
 
 
           <router-link to="/"
-            >Wallet <div class="beta">beta</div></router-link>
+            > 
+            <div class="hero__logo">
+      <img src="./assets/images/logo.png" alt="" width="200" />
+    </div>
+          </router-link>
          </div>
 
  
@@ -108,13 +112,13 @@ export default {
 }
 
 .header {
-  height: 54px;
+  height: 4.4em;
   width: 100%;
-
-  background: linear-gradient(to left,#24243e, #302b63, #24243e);
+background-color: #000000ad;
+  // background: linear-gradient(to left,#24243e, #302b63, #24243e);
   display: flex;
   justify-content: center;
-  border-bottom: #00ffff 1px solid;
+
 
   @include mq-lrg {
     position: fixed;
@@ -172,10 +176,11 @@ export default {
   }
 }
 
-.beta {
+.betax {
   color: #00ffff;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Anita';
   display: inline-block;
+  
 }
 
 .header-text {
