@@ -754,7 +754,7 @@
     color:#fff; 
     font-weight: normal;
 	text-transform: uppercase;
-	background: #24292f radial-gradient(circle, transparent 1%, #24292f 1%) 
+	background: #5983FC radial-gradient(circle, transparent 1%, #5983FC 1%) 
 	center/15000%; 
   }
 
@@ -1047,12 +1047,12 @@
   }
 
   &__icon {
-    border-radius: 26px;
+    // border-radius: 26px;
     display: flex;
     justify-content: center;
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    width: 8em;
+    height: 8em;
 
     background-repeat: none;
     background-position: center center;
