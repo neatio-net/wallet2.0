@@ -487,13 +487,11 @@
   border-color: azure;
   border-radius: 10px; 
   background: #000;
-  //display: flex;
   width: 95vw;
   max-width: 1020px;
   align-content: center;
   margin: 40px auto 0px auto;
   position: relative;
-  // text-align: left;
   box-sizing: 1px;
   border: none;
   border: 1px solid #00ffff;
@@ -742,11 +740,11 @@
 }
 
 .ripple {
-	@include font-size(1.5);
+	@include font-size(2.5);
   font-weight: bold;
 	background-position: center;
 	transition: background 0.2s;
-	padding-top: 10px;
+	padding: 16px 24px;
   background: linear-gradient(to left, #46bbf4, #2472fc);
   
   }
@@ -1012,15 +1010,11 @@
   }
 
   &__item {
-    width: 540px;
-    height: 480px;
+    width: 72em;
+    height: 48rem;
     padding: 36px;
-
-
-  
     border-radius: 10px;
     box-shadow: 0 10px 40px #000;
-
     border-radius: 10px;
     margin: 20px 40px 0px 40px;
     background-color: transparent;
@@ -1090,11 +1084,11 @@
   }
 
   &__title {
-    @include font-size(1.8);
-    color: #dddddd;
+    @include font-size(2.2);
+    color:#46bbf4;
     font-weight: 400;
     margin-bottom: 12px;
-    font-family: Lato-Regular;
+    font-family: Anita;
   }
 
   &__description {
