@@ -9,19 +9,19 @@
             > 
             <div class="hero__logo">
       <img src="./assets/images/logo.png" alt="" width="200" />
-    </div>
+     </div>
           </router-link>
          </div>
 
  
-         <div class="nav" v-bind:class="{ 'nav--active': navActive }">
-          <div class="nav__item" @click="onClickNav()">
+         <!-- <div class="nav" v-bind:class="{ 'nav--active': navActive }"> -->
+          <!-- <div class="nav__item" @click="onClickNav()">
             <a href="https://www.neatio.net" target="_blank">{{
               $t("WEBSITE")
             }}</a>
-          </div>
+          </div> -->
             
-<!--             
+         <!--             
             <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
                <router-link to="/edtool">{{
@@ -30,13 +30,13 @@
             </div>
            </div> -->
 
-          <div class="nav" v-bind:class="{ 'nav--active': navActive }">
+          <!-- <div class="nav" v-bind:class="{ 'nav--active': navActive }">
             <div class="nav__item" @click="onClickNav()">
               <a href="https://scan.neatio.net" target="_blank">{{
                 $t("EXPLORER")
               }}</a>
             </div>
-          </div>
+          </div> -->
 
            <!-- <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
@@ -55,8 +55,8 @@
           
 
 
-         </div>
-         <div
+         <!-- </div> -->
+         <!-- <div
           class="nav-toggle"
           @click="navToggleOnClick()"
           v-bind:class="{ 'nav-toggle--active': navActive }"
@@ -64,7 +64,7 @@
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> -->
       </div>
     </div>
  
