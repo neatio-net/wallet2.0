@@ -23,7 +23,7 @@
             <div class="cards-grid__description">
               <div class="hero__title2">
                 <router-link to="/send"
-                  ><button class="ripple">ACCESS WALLET</button></router-link
+                  ><button class="ripple">ACCESS</button></router-link
                 >
               </div>
             </div>
@@ -41,7 +41,7 @@
             <div class="cards-grid__description">
               <div class="hero__title2">
                 <router-link to="/create"
-                  ><button class="ripple">CREATE WALLET</button></router-link
+                  ><button class="ripple">CREATE</button></router-link
                 >
               </div>
             </div>
