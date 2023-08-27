@@ -7,9 +7,7 @@
 
           <router-link to="/"
             > 
-            <div class="hero__logo">
-      <img src="./assets/images/logo.png" alt="" width="200" />
-     </div>
+
           </router-link>
          </div>
 
