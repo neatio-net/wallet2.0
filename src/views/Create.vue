@@ -1,9 +1,5 @@
 <template>
   <div class="body-container">
-    <div class="hero__logo">
-      <img src="../assets/images/logo.png" alt="" width="100" />
-    </div>
-
     <div class="hero__title-page">{{ $t("pages.create.pageName") }}</div>
     <div class="hero__title">{{ $t("pages.create.cardChoose") }}</div>
 
