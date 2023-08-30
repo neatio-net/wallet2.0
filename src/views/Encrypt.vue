@@ -1,8 +1,6 @@
 <template>
   <div class="body-container">
-      <div class="hero__logo">
-      <img src="../assets/images/logo.png" alt="" width="100" />
-    </div>
+
     <div class="hero__title-page">{{ $t("pages.edtool.pageName") }}</div>
     <div class="hero__subTitle2">Please make sure you are using</div>
     <div class="hero__subTitle3">
