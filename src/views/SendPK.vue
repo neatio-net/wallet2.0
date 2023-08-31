@@ -15,9 +15,7 @@
 
     <div class="box1">   
       
-      <div class="hero__logo" v-show="address == null">
-      <img src="../assets/images/logo.png" alt="" width="100" />
-    </div>
+
     <div class="hero__title-page" v-show="address == null">
       {{ $t("pages.send.pageName") }}
     </div>
