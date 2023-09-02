@@ -100,11 +100,6 @@
       />
     </div>
 
-    <div class="hero__title" v-show="staked === '0' && staked !== null">
-      <div class="hero__title-ks">
-        <button class="ripple" @click="neatReg">REGISTER</button>
-      </div>
-    </div>
         <div class="hero__title" v-show="txHash !== null">
       Executed!
       <div class="hero__subTitle2" v-show="txHash !== null">
