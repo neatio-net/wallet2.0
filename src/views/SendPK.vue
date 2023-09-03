@@ -1,112 +1,95 @@
 <template>
   <div class="body-container">
-
     <div class="hero__subTitle2" v-show="address == null">
       Please make sure you are visiting
       <div class="hero__subTitle7" v-show="address == null">
-      <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
-    </div>
-
-    </div>
-
-
-
-
-
-    <div class="box1">   
-      
-
-    <div class="hero__title-page" v-show="address == null">
-      {{ $t("pages.send.pageName") }}
-    </div>
-
-    <div class="hero__title" v-show="address == null">
-      <input
-        type="password"
-        class="hero__inputs"
-        v-model="keyInput"
-        placeholder=" Enter Your Private Key In Here"
-      />
-    </div>
-
-    <div class="hero__warn" v-show="address == null">{{ keyError }}</div>
-    <div class="hero__title" v-show="address == null">
-      <div class="hero__title-ks">
-        <button class="ripple" @click="importKey">IMPORT</button>
+        <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
       </div>
     </div>
-
-
- 
-    <div class="hero__walletInfo" v-show="address !== null">
-      <div class="hero__subTitle2" v-show="address !== null">
-        WALLET ADDRESS
-   
+    <div class="box1">
+      <div class="hero__title-page" v-show="address == null">
+        {{ $t("pages.send.pageName") }}
       </div>
-      <div class="hero__title">
-        {{ addry }}
+
+      <div class="hero__title" v-show="address == null">
+        <input
+          type="password"
+          class="hero__inputs"
+          v-model="keyInput"
+          placeholder=" Enter Your Private Key In Here"
+        />
       </div>
-      <div class="hero__title">
-        <div v-show="balance == null && address !== null">
-          <div class="breeding-rhombus-spinner">
-            <div class="rhombus child-1"></div>
-            <div class="rhombus child-2"></div>
-            <div class="rhombus child-3"></div>
-            <div class="rhombus child-4"></div>
-            <div class="rhombus child-5"></div>
-            <div class="rhombus child-6"></div>
-            <div class="rhombus child-7"></div>
-            <div class="rhombus child-8"></div>
-            <div class="rhombus big"></div>
-          </div>
+
+      <div class="hero__warn" v-show="address == null">{{ keyError }}</div>
+      <div class="hero__title" v-show="address == null">
+        <div class="hero__title-ks">
+          <button class="ripple" @click="importKey">IMPORT</button>
         </div>
       </div>
-      <div class="hero__subTitle2" v-show="balance !== null">WALLET BALANCE</div>
-      <div class="hero__bal" v-show="balance !== null">
-        {{ balance }} <span class="hero__neat">NEAT</span>
+
+      <div class="hero__walletInfo" v-show="address !== null">
+        <div class="hero__subTitle2" v-show="address !== null">
+          WALLET ADDRESS
+        </div>
+        <div class="hero__title">
+          {{ addry }}
+        </div>
+        <div class="hero__title">
+          <div v-show="balance == null && address !== null">
+            <div class="breeding-rhombus-spinner">
+              <div class="rhombus child-1"></div>
+              <div class="rhombus child-2"></div>
+              <div class="rhombus child-3"></div>
+              <div class="rhombus child-4"></div>
+              <div class="rhombus child-5"></div>
+              <div class="rhombus child-6"></div>
+              <div class="rhombus child-7"></div>
+              <div class="rhombus child-8"></div>
+              <div class="rhombus big"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__subTitle2" v-show="balance !== null">
+          WALLET BALANCE
+        </div>
+        <div class="hero__bal" v-show="balance !== null">
+          {{ balance }} <span class="hero__neat">NEAT</span>
+        </div>
+      </div>
+
+      <div class="hero__title" v-show="address !== null"></div>
+      <div class="hero__title" v-show="address !== null">
+        <input
+          type="text"
+          class="hero__input1"
+          v-model="addressToSend"
+          placeholder="Address"
+        />
+      </div>
+      <div class="hero__title" v-show="address !== null">
+        <input
+          type="text"
+          class="hero__input2"
+          v-model="amountToSend"
+          placeholder="Amount"
+        />
+      </div>
+      <div class="hero__title" v-show="address !== null">
+        <div class="hero__title-ks">
+          <button class="ripple" @click="neatSend">SEND</button>
+        </div>
+      </div>
+
+      <div class="hero__title" v-show="txHash !== null">
+        Executed!
+        <div class="hero__subTitle2" v-show="txHash !== null">
+          Transaction Hash ID is:
+        </div>
+        <div class="hero__subTitle3" v-show="txHash !== null">
+          <a :href="`https://scan.neatio.net/tx/${txHash}`">View TX</a>
+        </div>
       </div>
     </div>
-
-    <div class="hero__title" v-show="address !== null"></div>
-    <div class="hero__title" v-show="address !== null">
-      <input
-        type="text"
-        class="hero__input1"
-        v-model="addressToSend"
-        placeholder="Address"
-      />
-    </div>
-    <div class="hero__title" v-show="address !== null">
-      <input
-        type="text"
-        class="hero__input2"
-        v-model="amountToSend"
-        placeholder="Amount"
-      />
-    </div>
-    <div class="hero__title" v-show="address !== null">
-      <div class="hero__title-ks">
-        <button class="ripple" @click="neatSend">SEND</button>
-      </div>
-    </div>
-
-
-
-    <div class="hero__title" v-show="txHash !== null">
-      Executed!
-      <div class="hero__subTitle2" v-show="txHash !== null">
-        Transaction Hash ID is:
-      </div>
-      <div class="hero__subTitle3" v-show="txHash !== null">
-        <a :href="`https://scan.neatio.net/tx/${txHash}`" >View TX</a>
-      </div>
-    </div>
-  
-  </div>   
-
-
-
-
   </div>
 </template>
 
@@ -203,10 +186,6 @@ export default {
       console.log(`Transaction confirmed: ${txHash.transactionHash}`);
       this.txHash = txHash.transactionHash;
     },
-
-   
-
-    
   },
 };
 </script>
