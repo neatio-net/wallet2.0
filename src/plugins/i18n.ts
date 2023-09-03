@@ -167,7 +167,7 @@ const messages = {
           websites and social media channels.
           `,
 
-          `Last updated: March 03, 2021`
+          `Last updated: September 02, 2023`
         ]        
       },
       
