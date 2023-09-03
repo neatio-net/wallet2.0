@@ -4,10 +4,7 @@
       <div class="header-section">
         <div class="header-section__content content-container">
           <div class="header-section__heading">
-            <!-- <div class="header-section__title">
-              {{ $t("pages.terms.pageTitle") }}
-            </div> -->
-          </div>
+            </div>
         </div>
       </div>
     </div>
