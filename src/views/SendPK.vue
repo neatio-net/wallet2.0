@@ -7,9 +7,7 @@
       </div>
     </div>
     <div class="box1">
-      <div class="hero__title-page" v-show="address == null">
-        {{ $t("pages.send.pageName") }}
-      </div>
+      <div class="hero__wallet-description">{{ $t("pages.home.pageName") }}</div>
 
       <div class="hero__title" v-show="address == null">
         <input
