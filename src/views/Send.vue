@@ -1,7 +1,6 @@
 <template>
   <div class="body-container">
-    <div class="hero__title-page">{{ $t("pages.send.pageName") }}</div>
-    <div class="hero__title">{{ $t("pages.send.cardChoose") }}</div>
+    <div class="hero__wallet-description">{{ $t("pages.home.pageName") }}</div>
 
     <div class="section section--light">
       <div
