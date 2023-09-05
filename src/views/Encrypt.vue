@@ -1,6 +1,5 @@
 <template>
   <div class="body-container">
-
     <div class="hero__title-page">{{ $t("pages.edtool.pageName") }}</div>
     <div class="hero__subTitle2">Please make sure you are using</div>
     <div class="hero__subTitle3">
@@ -76,11 +75,7 @@
 
     <div class="hero__title">
       <div class="hero__title-ks">
-        <button
-          class="ripple"
-          v-show="address !== ''"
-          @click="downloadPrivKey"
-        >
+        <button class="ripple" v-show="address !== ''" @click="downloadPrivKey">
           DOWNLOAD
         </button>
       </div>
@@ -97,13 +92,13 @@ export default {
 
   data() {
     return {
-      address: '',
-      privKey: '',
+      address: "",
+      privKey: "",
       pass1: "",
       pass2: "",
-      error1: '',
-      error2: '',
-      error3: '',
+      error1: "",
+      error2: "",
+      error3: "",
     };
   },
 
