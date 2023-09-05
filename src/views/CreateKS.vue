@@ -40,7 +40,6 @@
       <span style="color: #dddddd">{{ address }}</span>
     </div>
 
-
     <div class="hero__title">
       <div class="hero__title-ks">
         <button class="ripple" @click="genWallet">GENERATE</button>
@@ -98,8 +97,6 @@ export default {
   },
 
   methods: {
-
-
     genWallet() {
       if (this.pass1.length == 0) {
         const error1 = "Password can't be empty!";
