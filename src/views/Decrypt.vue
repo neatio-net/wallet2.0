@@ -1,6 +1,5 @@
 <template>
   <div class="body-container">
-
     <div class="hero__title-page">{{ $t("pages.edtool.pageName") }}</div>
     <div class="hero__subTitle2" v-show="txtName == ''">
       Please make sure you are using
