@@ -1,7 +1,5 @@
 <template>
   <div class="body-container">
-
-
     <div class="hero__title-page">{{ $t("pages.register.pageName") }}</div>
     <div class="hero__subTitle2" v-show="txtName == ''">
       Please make sure you are using
@@ -100,7 +98,7 @@
       />
     </div>
 
-        <div class="hero__title" v-show="txHash !== null">
+    <div class="hero__title" v-show="txHash !== null">
       Executed!
       <div class="hero__subTitle2" v-show="txHash !== null">
         Transaction Hash ID is:
@@ -118,7 +116,6 @@
         <button class="ripple2" @click="neatUnreg">UN-REGISTER</button>
       </div>
     </div>
-
   </div>
 </template>
 
