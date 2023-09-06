@@ -1,14 +1,11 @@
 <template>
   <div class="body-container">
-
-    
     <div class="hero__wallet-description">{{ $t("pages.home.pageName") }}</div>
-     <div class="section section--light">
+    <div class="section section--light">
       <div
         class="section__content section__content--thin-top content-container"
       >
         <div class="cards-grid">
-
           <div class="cards-grid__item">
             <div class="cards-grid__graphic">
               <div class="cards-grid__icon cards-grid__icon--send">
@@ -48,19 +45,16 @@
       </div>
     </div>
     <div class="wallet-terms">
-      By using this application you agree to the <router-link to="/terms"
-                  ><button1 class="terms-of-use">Terms Of Use.</button1></router-link
-                >.
-
+      By using this application you agree to the
+      <router-link to="/terms"
+        ><button1 class="terms-of-use">Terms Of Use.</button1></router-link
+      >.
     </div>
   </div>
-  
 </template>
 
 <script>
-
-
 export default {
   name: "Home",
-}
+};
 </script>
