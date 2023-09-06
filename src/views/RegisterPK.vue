@@ -1,6 +1,8 @@
 <template>
   <div class="body-container">
-    <div class="hero__title-page" v-show="address == null">{{ $t("pages.register.pageName") }}</div>
+    <div class="hero__title-page" v-show="address == null">
+      {{ $t("pages.register.pageName") }}
+    </div>
     <div class="hero__subTitle2" v-show="address == null">
       Please make sure you are using
     </div>
@@ -29,20 +31,24 @@
       {{ address }}
     </div>
 
-<div class="hero__fullbalance">
-  <div class="hero__subTitle2" v-show="balance !== null" > Available balance  </div>
-    <div class="hero__bal" v-show="balance !== null">
-      {{ balance }}<span class="hero__neat">NEAT</span>
+    <div class="hero__fullbalance">
+      <div class="hero__subTitle2" v-show="balance !== null">
+        Available balance
+      </div>
+      <div class="hero__bal" v-show="balance !== null">
+        {{ balance }}<span class="hero__neat">NEAT</span>
+      </div>
+      <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
+      <div class="hero__bal2" v-show="balance !== null">
+        {{ staked }} <span class="hero__neat">NEAT</span>
+      </div>
+      <div class="hero__subTitle2" v-show="reward !== null">
+        Unclaimed Rewards
+      </div>
+      <div class="hero__bal2" v-show="balance !== null">
+        {{ reward }} <span class="hero__neat">NEAT</span>
+      </div>
     </div>
-    <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
-    <div class="hero__bal2" v-show="balance !== null">
-      {{ staked }} <span class="hero__neat">NEAT</span>
-    </div>
-    <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Rewards</div>
-    <div class="hero__bal2" v-show="balance !== null">
-      {{ reward }} <span class="hero__neat">NEAT</span>
-    </div>
-</div>
 
     <!-- <div class="hero__subTitle2" v-show="balance !== null" > Available balance  </div>
     <div class="hero__bal" v-show="balance !== null">
@@ -103,12 +109,10 @@
         placeholder="Amount (min. 50,000)"
       />
     </div>
-    
 
     <div class="hero__title" v-show="staked == '0' && staked !== null">
       <button class="ripple" @click="neatReg">REGISTER</button>
     </div>
-
 
     <div class="hero__title4">
       <div class="hero__subTitle2" v-show="staked !== '0' && staked !== null">
@@ -117,7 +121,6 @@
       <div class="hero__title" v-show="staked !== '0' && staked !== null">
         <button class="ripple2" @click="neatUnreg">UN-REGISTER</button>
       </div>
-
     </div>
   </div>
 </template>
@@ -196,23 +199,21 @@ export default {
         };
 
         // setInterval(() => {
-          axios
-            .post(URL, DATA, { "Content-type": "application/json" })
-            .then(
-              (response) =>
-              {
-          (this.balance = Utils.toNEAT(
-            Nat.toString(response.data.result.balance)
-          )),
-            (this.staked = Utils.toNEAT(
-              Nat.toString(response.data.result.delegateBalance)
+        axios
+          .post(URL, DATA, { "Content-type": "application/json" })
+          .then((response) => {
+            (this.balance = Utils.toNEAT(
+              Nat.toString(response.data.result.balance)
             )),
-            (this.reward = Utils.toNEAT(
-              Nat.toString(response.data.result.rewardBalance)
-            ));
-        });
+              (this.staked = Utils.toNEAT(
+                Nat.toString(response.data.result.delegateBalance)
+              )),
+              (this.reward = Utils.toNEAT(
+                Nat.toString(response.data.result.rewardBalance)
+              ));
+          });
 
-           // }, 500);
+        // }, 500);
       }
     },
 
@@ -220,7 +221,7 @@ export default {
       const account = web3.eth.accounts.privateKeyToAccount(this.privateKey);
       const send = RPC(URL);
       const recipient = "0x0000000000000000000000000000000000000505";
-      const amount = this.valAmountToStake; 
+      const amount = this.valAmountToStake;
       const valPubKey = this.valPubKeyInput;
       const valPrivKey = this.valPrivKeyInput;
       const validatorPubKey = "0x" + valPubKey;
@@ -254,15 +255,29 @@ export default {
       const createReceipt = await web3.eth.sendSignedTransaction(
         createTransaction.rawTransaction
       );
-      alert(`Validator successfully registered! TxID: ${createReceipt.transactionHash}`); // new alert
-       console.log(`Validator succesfully registered: ${createReceipt.transactionHash}`);
+      alert(
+        `Validator successfully registered! TxID: ${createReceipt.transactionHash}`
+      ); // new alert
+      console.log(
+        `Validator succesfully registered: ${createReceipt.transactionHash}`
+      );
     },
 
-    async neatClaim() { // not working
+    async neatClaim() {
+      // not working
       const account = web3.eth.accounts.privateKeyToAccount(this.privateKey);
       const recipient = "0x0000000000000000000000000000000000000505";
-      const contractMethod = Abi.methodID("WithdrawReward", ["address", "uint256"]);
-      const validatorData = Abi.encodeParams(["address", "uint256"], [account.address, new BigNumber(this.amountToClaim).multipliedBy(Math.pow(10, 18))]);
+      const contractMethod = Abi.methodID("WithdrawReward", [
+        "address",
+        "uint256",
+      ]);
+      const validatorData = Abi.encodeParams(
+        ["address", "uint256"],
+        [
+          account.address,
+          new BigNumber(this.amountToClaim).multipliedBy(Math.pow(10, 18)),
+        ]
+      );
       const createTransaction = await web3.eth.accounts.signTransaction(
         {
           from: account.address,
@@ -276,13 +291,15 @@ export default {
       const createReceipt = await web3.eth.sendSignedTransaction(
         createTransaction.rawTransaction
       );
-      alert(`Your claim was successfully! TxID: ${createReceipt.transactionHash}`); // new alert
-      console.log(`Reward succesfully claimed with tx ID: ${createReceipt.transactionHash}`);
+      alert(
+        `Your claim was successfully! TxID: ${createReceipt.transactionHash}`
+      ); // new alert
+      console.log(
+        `Reward succesfully claimed with tx ID: ${createReceipt.transactionHash}`
+      );
     },
 
-
-
-    async neatUnreg() { 
+    async neatUnreg() {
       const account = web3.eth.accounts.privateKeyToAccount(this.privateKey);
       const recipient = "0x0000000000000000000000000000000000000505";
       const contractMethod = Abi.methodID("UnRegister", []);
@@ -300,11 +317,13 @@ export default {
       const createReceipt = await web3.eth.sendSignedTransaction(
         createTransaction.rawTransaction
       );
-      alert(`Validator successfully unregistered! TxID: ${createReceipt.transactionHash}`); // new alert
-      console.log(`Validator unregistered succesfully with tx ID: ${createReceipt.transactionHash}`);
+      alert(
+        `Validator successfully unregistered! TxID: ${createReceipt.transactionHash}`
+      ); // new alert
+      console.log(
+        `Validator unregistered succesfully with tx ID: ${createReceipt.transactionHash}`
+      );
     },
-
-
   },
 };
 </script>
