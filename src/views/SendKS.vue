@@ -1,6 +1,5 @@
 <template>
   <div class="body-container">
-
     <div class="hero__title-page">{{ $t("pages.send.pageName") }}</div>
     <div class="hero__subTitle2" v-show="txtName == ''">
       Please make sure you are using
@@ -110,10 +109,10 @@ const Nat = require("neatioapi").nat;
 const Utils = require("neatioapi").utils;
 const URL = "https://rpc.neatio.net";
 const RPC = require("neatioapi").rpc;
-const Web3 = require('web3');
-const web3 = new Web3('https://rpc.neatio.net');
-const Accounts = require('web3-eth-accounts').accounts;
-const Tx = require('ethereumjs-tx').Transaction;
+const Web3 = require("web3");
+const web3 = new Web3("https://rpc.neatio.net");
+const Accounts = require("web3-eth-accounts").accounts;
+const Tx = require("ethereumjs-tx").Transaction;
 
 import axios from "axios";
 
@@ -182,36 +181,35 @@ export default {
     },
 
     async neatSend() {
-            const account = KeyStore.fromV3Keystore(
+      const account = KeyStore.fromV3Keystore(
         JSON.parse(this.keyStore),
         this.passwd
       );
       const privateKey = account.privateKey;
-       // console.log(account);
-     const addressFrom = this.address;
-    // console.log(addressFrom);
+      // console.log(account);
+      const addressFrom = this.address;
+      // console.log(addressFrom);
 
-  const amountToSend = this.amountToSend;
-  const addressTo = this.addressToSend;
-  //  console.log(
-  //     `Sending... ${addressFrom} to ${addressTo}`
-  //  );
+      const amountToSend = this.amountToSend;
+      const addressTo = this.addressToSend;
+      //  console.log(
+      //     `Sending... ${addressFrom} to ${addressTo}`
+      //  );
 
-   const createTransaction = await web3.eth.accounts.signTransaction(
-      {
-         from: addressFrom,
-         to: addressTo,
-         value: web3.utils.toWei(`${amountToSend}`, 'ether'),
-         gas: '53000',
-      },
-      privateKey
-   );
+      const createTransaction = await web3.eth.accounts.signTransaction(
+        {
+          from: addressFrom,
+          to: addressTo,
+          value: web3.utils.toWei(`${amountToSend}`, "ether"),
+          gas: "53000",
+        },
+        privateKey
+      );
 
-   const createReceipt = await web3.eth.sendSignedTransaction(
-      createTransaction.rawTransaction
-     
-   );
-    this.transactionHash = createReceipt.transactionHash;
+      const createReceipt = await web3.eth.sendSignedTransaction(
+        createTransaction.rawTransaction
+      );
+      this.transactionHash = createReceipt.transactionHash;
     },
   },
 };
