@@ -1,7 +1,5 @@
 <template>
   <div class="body-container">
-
-
     <div class="hero__title-page">{{ $t("pages.register.pageName") }}</div>
     <div class="section section--light">
       <div
@@ -43,8 +41,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
