@@ -2,7 +2,6 @@
   <div class="body-container">
     <div class="hero__title-page">{{ $t("pages.create.pageName") }}</div>
     <div class="hero__title">{{ $t("pages.create.cardChoose") }}</div>
-
     <div class="section section--light">
       <div
         class="section__content section__content--thin-top content-container"
