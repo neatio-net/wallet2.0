@@ -8,7 +8,7 @@
     </div>
     <div class="box1">
       <div class="hero__wallet-description">
-        {{ $t("pages.home.pageName") }}
+        {{ $t("Here you can access your Neatio wallet.") }}
       </div>
 
       <div class="hero__title" v-show="address == null">
@@ -16,7 +16,7 @@
           type="password"
           class="hero__inputs"
           v-model="keyInput"
-          placeholder=" Enter Your Private Key In Here"
+          placeholder=" Enter Your Private Key"
         />
       </div>
 
