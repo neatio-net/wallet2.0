@@ -162,10 +162,7 @@ export default {
       transactionHash: null,
     };
   },
-  //   mounted() {
-  //   this.connectAccount();
-  //   this.initialize();
-  // },
+
   methods: {
     //     initialize () {
     //   ethereum.on('chainChanged', (_chainId) => {
