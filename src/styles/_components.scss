@@ -330,7 +330,7 @@
     color: #00ffff;   
   }
   &__subTitle2 {
-    @include font-size(1.4);
+    @include font-size(1.8);
     font-family: "Lato-Regular";
     line-height: 1.8;
     position: relative;
@@ -346,17 +346,17 @@
     font-family: "Computer";
     line-height: 1.8;
     position: relative;
-    color: #00ffff;
+    color: #46bbf4;
     margin-bottom: 40px;
     padding-bottom: 1.2em;
   }
 
   &__subTitle7 {
-    @include font-size(1.7);
+    @include font-size(2.2);
     font-family: "Lato-Regular";
     line-height: 2.2;
     position: relative;
-    color: #15ff00;   
+    color: #46bbf4;   
     margin-bottom: 40px;
   }
 
@@ -394,18 +394,21 @@
 
 
   &__inputs {
-    @include font-size(1.8);
+    @include font-size(2.8);
     margin: auto;
     width: 75vw;
-    max-width: 500px;
+    max-width: 740px;
     font-family: "Anita";
-    background-color: linear-gradient(to left,#24243e, #302b63, #24243e);
+    background-color: #1f2331 ;
     border-style: solid;
-    border-color: #00ffff;
+    border-radius: 10px;
+    border-color: #000;
+    box-sizing: 1px;
+    // box-shadow: 0 0 40px #000;
     text-align: center;
     line-height: 1.8;
     position: relative;
-    color: #DDDDDD;   
+    color: #fff;   
   }
 
   &__input-ks {
