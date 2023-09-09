@@ -1,7 +1,7 @@
 <template>
   <div class="body-container">
     <div class="hero__title-page">{{ $t("pages.create.pageName") }}</div>
-    <div class="hero__title">{{ $t("pages.create.cardChoose1") }}</div>
+    <!-- <div class="hero__title">{{ $t("TEXT1") }}</div> -->
     <div class="box1">
     <div class="hero__subTitle2">Please make sure you are using</div>
     <div class="hero__subTitle3">
