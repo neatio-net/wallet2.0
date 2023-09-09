@@ -1,11 +1,16 @@
 <template>
   <div class="body-container">
     <div class="hero__title-page">{{ $t("pages.create.pageName") }}</div>
+    <div class="hero__title">{{ $t("pages.create.cardChoose1") }}</div>
+    <div class="box1">
     <div class="hero__subTitle2">Please make sure you are using</div>
     <div class="hero__subTitle3">
       <b-icon-lock-fill></b-icon-lock-fill>https://wallet.neatio.net
     </div>
 
+
+
+ 
     <div class="hero__title" v-show="address !== null">
       <div class="hero__subTitle">{{ $t("pages.createPK.walletAddress") }}</div>
     </div>
@@ -42,6 +47,7 @@
         </button>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
