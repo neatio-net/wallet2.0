@@ -16,6 +16,9 @@
             <div class="cards-grid__title">
               {{ $t("Unencrypted PrivKey") }}
             </div>
+ 
+              {} less secure, but easier to use 
+
             <div class="cards-grid__description">
               <div class="hero__title2">
                 <router-link to="/create-pk"
@@ -34,6 +37,7 @@
             <div class="cards-grid__title">
               {{ $t("KeyStore + Password") }}
             </div>
+{} more secure, but harder to use 
             <div class="cards-grid__description">
               <div class="hero__title2">
                 <router-link to="/create-ks"
