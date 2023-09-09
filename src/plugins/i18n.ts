@@ -21,8 +21,8 @@ const messages = {
       create: {
           pageName: `Create a Neatio wallet`,
           cardChoose: `Please choose a wallet type`,
-          cardChoose1: `You are creating a Private Key wallet`,
-          cardChoose2: `You are creating a KeyStore wallet`,
+          cardChoose1: `Tip: less secure, but easier to use type of wallet.`,
+          cardChoose2: `Tip: more secure, but harder to use type of wallet.`,
           },
       send: {
             pageName: `OPENING WALLET`,
