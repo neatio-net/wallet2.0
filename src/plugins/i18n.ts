@@ -19,8 +19,10 @@ const messages = {
         pageDesc: `This is NIO Web Wallet`,
         },
       create: {
-          pageName: `CREATION`,
+          pageName: `Create a Neatio wallet`,
           cardChoose: `Please choose a wallet type`,
+          cardChoose1: `You are creating a Private Key wallet`,
+          cardChoose2: `You are creating a KeyStore wallet`,
           },
       send: {
             pageName: `OPENING WALLET`,
