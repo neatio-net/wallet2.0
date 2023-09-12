@@ -1,6 +1,6 @@
 <template>
   <div class="body-container">
-    <div class="hero__title-page">{{ $t("pages.edtool.pageName") }}</div>
+    <!-- <div class="hero__title-page">{{ $t("pages.edtool.pageName") }}</div> -->
     <div class="hero__title">{{ $t("pages.edtool.cardChoose") }}</div>
 
     <div class="section section--light">
