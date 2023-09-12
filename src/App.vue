@@ -14,7 +14,7 @@
          </div>
 
  
-         <!-- <div class="nav" v-bind:class="{ 'nav--active': navActive }"> -->
+         <div class="nav" v-bind:class="{ 'nav--active': navActive }">
           <!-- <div class="nav__item" @click="onClickNav()">
             <a href="https://www.neatio.net" target="_blank">{{
               $t("WEBSITE")
