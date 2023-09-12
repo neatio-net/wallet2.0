@@ -25,7 +25,7 @@
             <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
                <router-link to="/edtool">{{
-                 $t("Encrypt / Decrypt Tool")
+                 $t("Encrypt / Decrypt")
                  }}</router-link>
             </div>
            </div>
@@ -230,8 +230,16 @@ background-color: #000000ad;
 
   &__item {
     a {
-      color: #00ffff;
-      font-size: 20px;
+      background-color: #2472fc;
+    background-image: linear-gradient(45deg,#5983FC,#46bbf4, #2472fc);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+      font-size: 22px;
+      font-weight: bold;
       text-transform: uppercase;
       font-family: "Anita";
       text-decoration: none;
@@ -248,7 +256,7 @@ background-color: #000000ad;
       height: 2px;
       left: 50%;
       position: relative;
-      background: #00ffff;
+      background: #2472fc;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
     }
