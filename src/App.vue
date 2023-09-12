@@ -21,14 +21,14 @@
             }}</a>
           </div> -->
             
-         <!--             
+                     
             <div class="nav" v-bind:class="{ 'nav--active': navActive }">
              <div class="nav__item" @click="onClickNav()">
                <router-link to="/edtool">{{
-                 $t("EDTOOLS")
+                 $t("Encrypt / Decrypt Tool")
                  }}</router-link>
             </div>
-           </div> -->
+           </div>
 
           <!-- <div class="nav" v-bind:class="{ 'nav--active': navActive }">
             <div class="nav__item" @click="onClickNav()">
@@ -55,8 +55,8 @@
           
 
 
-         <!-- </div> -->
-         <!-- <div
+         </div>
+         <div
           class="nav-toggle"
           @click="navToggleOnClick()"
           v-bind:class="{ 'nav-toggle--active': navActive }"
@@ -64,7 +64,7 @@
           <span></span>
           <span></span>
           <span></span>
-        </div> -->
+        </div>
       </div>
     </div>
  
