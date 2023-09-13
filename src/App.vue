@@ -230,7 +230,7 @@ background-color: #000000ad;
 
   &__item {
     a {
-      background-color: #2472fc;
+    background-color: #2472fc;
     background-image: linear-gradient(45deg,#5983FC,#46bbf4, #2472fc);
     background-size: 100%;
     background-repeat: repeat;
