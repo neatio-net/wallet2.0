@@ -444,29 +444,29 @@
     text-align: center;
     line-height: 1.8;
     position: relative;
-    color: #fff;
-    
+    color: #fff;    
     @include mq-med {
       @include font-size(1.6);
     }
   }
 
   &__input2 {
-    @include font-size(1.4);
+    @include font-size(1.8);
     margin: auto;
-    width: 33vw;
-    max-width: 300px;
+    width: 34vw;
+    max-width: 740px;
     font-family: "Anita";
-    background-color: #000;
+    background-color: #1f2331 ;
     border-style: solid;
-    border-color: #ddd;
+    border-radius: 10px;
+    border-color: #000;
+    box-sizing: 1px;
     text-align: center;
     line-height: 1.8;
     position: relative;
-    color: #DDDDDD; 
-    
+    color: #fff;    
     @include mq-med {
-      @include font-size(1.2);
+      @include font-size(1.6);
     }
   }
 
@@ -994,6 +994,7 @@
   @include mq-sml {
     width: auto;
     height: auto;
+    padding-top: 140px;
     padding: 36px;
   flex-wrap: wrap;
   }
