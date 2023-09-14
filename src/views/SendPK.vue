@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="box1">
-      <div class="hero__wallet-description">
+      <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
 
