@@ -32,7 +32,7 @@
           WALLET ADDRESS
         </div>
         <div class="hero__title">
-          {{ addry }}
+          {{ address }}
         </div>
         <div class="hero__title">
           <div v-show="balance == null && address !== null">
