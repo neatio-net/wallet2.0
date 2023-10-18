@@ -52,7 +52,7 @@
 </template>
 
 <script>
-const neatAccount = require("neatioapi").account;
+const neatAccount = require("nio-api").account;
 
 export default {
   name: "CreatePK",
