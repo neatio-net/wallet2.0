@@ -126,13 +126,13 @@
 </template>
 
 <script>
-const Account = require("neatioapi").account;
-const RPC = require("neatioapi").rpc;
-const Nat = require("neatioapi").nat;
-const Utils = require("neatioapi").utils;
+const Account = require("nio-api").account;
+const RPC = require("nio-api").rpc;
+const Nat = require("nio-api").nat;
+const Utils = require("nio-api").utils;
 const URL = "https://rpc.neatio.net";
 const Web3 = require("web3");
-const Abi = require("neatioapi").abi;
+const Abi = require("nio-api").abi;
 const web3 = new Web3("https://rpc.neatio.net");
 
 import axios from "axios";
