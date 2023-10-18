@@ -94,9 +94,9 @@
 </template>
 
 <script>
-const Account = require("neatioapi").account;
-const Nat = require("neatioapi").nat;
-const Utils = require("neatioapi").utils;
+const Account = require("nio-api").account;
+const Nat = require("nio-api").nat;
+const Utils = require("nio-api").utils;
 const URL = "https://rpc.neatio.net";
 const Web3 = require("web3");
 const web3 = new Web3("https://rpc.neatio.net");
