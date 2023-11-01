@@ -64,10 +64,10 @@
 </template>
 
 <script>
-const Account = require("neatioapi").account;
-const KeyStore = require("neatioapi").keystore;
-const Nat = require("neatioapi").nat;
-const Utils = require("neatioapi").utils;
+const Account = require("nio-api").account;
+const KeyStore = require("nio-api").keystore;
+const Nat = require("nio-api").nat;
+const Utils = require("nio-api").utils;
 
 export default {
   name: "SendKS",
