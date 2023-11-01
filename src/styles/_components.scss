@@ -454,7 +454,7 @@
     @include font-size(1.8);
     margin: auto;
     width: 34vw;
-    max-width: 740px;
+    max-width: 540px;
     font-family: "Anita";
     background-color: #1f2331 ;
     border-style: solid;
@@ -484,21 +484,50 @@
 
 .box1 {
 
-  padding-top: 20px;
-  margin-top: 10px;
+  // padding-top: 20px;
+  // margin-top: 10px;
   padding-bottom: 20px;
-  border-radius: 10px; 
+  border-top-right-radius: 10px; 
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   background: transparent;
   width: 95vw;
   max-width: 1020px;
   align-content: center;
-  margin: 40px auto 0px auto;
+  margin: 0px auto 0px auto;
   position: relative;
   box-sizing: 1px;
   box-shadow: 0 10px 40px #000;
 }
+.box7 {
+  // display: none;
+  box-align: start;
+  border-top-right-radius: 8px; 
+  border-top-left-radius: 8px; 
+  background: #1f2331;
+  width: 160px;
+  height: 48px;
+  max-width: 1020px;
+  box-sizing: 1px;
+  border: 1px solid #202020;
+  margin-top: 25px;
+ 
 
+;
 
+}
+.subTitle7 {
+  @include font-size(2.2);
+  font-family: "Anita";
+  line-height: 1.8;
+  text-align: center;
+
+  color: #DDDDDD; 
+ 
+ 
+
+  // margin-top: 40px;  
+}
 
 .breeding-rhombus-spinner {
   margin: auto;
