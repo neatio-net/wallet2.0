@@ -80,8 +80,8 @@
 </template>
 
 <script>
-const neatAccount = require("neatioapi").account;
-const neatKeystore = require("neatioapi").keystore;
+const neatAccount = require("nio-api").account;
+const neatKeystore = require("nio-api").keystore;
 
 export default {
   name: "CreateKS",
