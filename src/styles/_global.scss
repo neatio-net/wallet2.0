@@ -160,6 +160,23 @@ button {
 	transition: background 0s;
   }
 
+  .ripplex {
+	@include font-size(2.5);
+	background-position: center;
+	transition: background 0.4s;
+	padding-top: 10px;
+  }
+  .ripplex:hover {
+	border-color: #46bbf4;
+	background: #24292f radial-gradient(circle, transparent 1%, #24292f 1%) 
+	center/15000%;
+  }
+  .ripplex:active {
+	background-color: #24292f;
+	background-size: 100%;
+	transition: background 0s;
+  }
+
 
 .ripple2 {
 	@include font-size(1.5);
