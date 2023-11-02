@@ -64,16 +64,16 @@
       Available Balance
     </div>
     <div class="hero__bal" v-show="balance !== null">
-      {{ balance }} <span class="hero__neat">NEAT</span>
+      {{ balance }} <span class="hero__neat">NIO</span>
     </div>
     <div class="hero__subTitle2" v-show="staked !== null">Tokens In stake</div>
     <div class="hero__bal" v-show="staked !== null">
-      {{ staked }} <span class="hero__neat">NEAT</span>
+      {{ staked }} <span class="hero__neat">NIO</span>
     </div>
     <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Reward</div>
 
     <div class="hero__bal" v-show="reward !== null">
-      {{ reward }} <span class="hero__neat">NEAT</span>
+      {{ reward }} <span class="hero__neat">NIO</span>
     </div>
 
     <div class="hero__title" v-show="reward !== '0' && reward !== null">
@@ -120,13 +120,13 @@
 </template>
 
 <script>
-const Account = require("neatioapi").account;
-const KeyStore = require("neatioapi").keystore;
-const Transaction = require("neatioapi").transaction;
-const RPC = require("neatioapi").rpc;
-const Nat = require("neatioapi").nat;
-const Abi = require("neatioapi").abi;
-const Utils = require("neatioapi").utils;
+const Account = require("nio-api").account;
+const KeyStore = require("nio-api").keystore;
+const Transaction = require("nio-api").transaction;
+const RPC = require("nio-api").rpc;
+const Nat = require("nio-api").nat;
+const Abi = require("nio-api").abi;
+const Utils = require("nio-api").utils;
 const URL = "https://rpc.neatio.net";
 
 import axios from "axios";
