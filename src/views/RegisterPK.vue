@@ -36,31 +36,31 @@
         Available balance
       </div>
       <div class="hero__bal" v-show="balance !== null">
-        {{ balance }}<span class="hero__neat">NEAT</span>
+        {{ balance }}<span class="hero__neat">NIO</span>
       </div>
       <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
       <div class="hero__bal2" v-show="balance !== null">
-        {{ staked }} <span class="hero__neat">NEAT</span>
+        {{ staked }} <span class="hero__neat">NIO</span>
       </div>
       <div class="hero__subTitle2" v-show="reward !== null">
         Unclaimed Rewards
       </div>
       <div class="hero__bal2" v-show="balance !== null">
-        {{ reward }} <span class="hero__neat">NEAT</span>
+        {{ reward }} <span class="hero__neat">NIO</span>
       </div>
     </div>
 
     <!-- <div class="hero__subTitle2" v-show="balance !== null" > Available balance  </div>
     <div class="hero__bal" v-show="balance !== null">
-      {{ balance }}<span class="hero__neat">NEAT</span>
+      {{ balance }}<span class="hero__neat">NIO</span>
     </div>
     <div class="hero__subTitle2" v-show="staked !== null">Coins locked</div>
     <div class="hero__bal2" v-show="balance !== null">
-      {{ staked }} <span class="hero__neat">NEAT</span>
+      {{ staked }} <span class="hero__neat">NIO</span>
     </div>
     <div class="hero__subTitle2" v-show="reward !== null">Unclaimed Rewards</div>
     <div class="hero__bal2" v-show="balance !== null">
-      {{ reward }} <span class="hero__neat">NEAT</span>
+      {{ reward }} <span class="hero__neat">NIO</span>
     </div> -->
 
     <div class="hero__title" v-show="reward != '0' && reward !== null">
