@@ -14,17 +14,19 @@
           {{ address }}
         </div>
 
-        <div class="box-btn">
-          <div class="box8" v-show="address !== null">
+        <!-- <div class="box-btn">
+          <div class="box7" v-show="address !== null">
           <button class="ripplex" id="rpp1" @click="swStake">Send</button>
         </div>
         <div class="box8" v-show="address !== null">
           <button class="ripplex" id="rpp2" @click="swStake">Stake</button>
         </div>
-        </div>
+        </div> -->
   
+    <Tabs>
 
-
+    
+     <Tab name="transfer" >
     <div class="box1" id="box11" >
       <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
@@ -109,8 +111,12 @@
         </div>
       </div>
     </div>
+    </Tab>
 
-    <div class="box2" id="box22" v-show="address == 1">
+
+ <Tab name="stakex">
+
+    <div class="box2" id="box22" >
       <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
@@ -180,7 +186,7 @@
       </div>
       <div class="hero__title" v-show="address !== null">
         <div class="hero__title-ks">
-          <button class="ripple" @click="neatSend">Stake</button>
+          <button class="ripple" @click="neatStake">Stake</button>
         </div>
       </div>
 
@@ -194,6 +200,8 @@
         </div>
       </div>
     </div>
+  </Tab>
+    </Tabs>
   </div>
 </template>
 
@@ -207,10 +215,15 @@ const Utils = require("nio-api").utils;
 const URL = "https://rpc.neatio.net";
 
 import axios from "axios";
+import Tab from "@/components/Tab";
+import Tabs from "@/components/Tabs";
 
 export default {
   name: "SendPK",
-
+  components: {
+      Tab,
+      Tabs
+  },
   data() {
     return {
       keyInput: null,
@@ -306,7 +319,11 @@ export default {
             }
             
 
-}
+     },
+
+    neatStake() {
+      // code
+    }
 
   },
 };
