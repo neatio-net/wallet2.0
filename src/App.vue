@@ -72,9 +72,13 @@
   </div>
 </template>
 <script lang="ts">
+
 import i18n from "@/plugins/i18n";
+
+
 export default {
   name: "app",
+
   data() {
     return {
       navActive: false as boolean,
