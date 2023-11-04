@@ -20,9 +20,9 @@
           }
      },
 
-     mounted() {
-        this.isActive = this.selected;
-     }
+    //  mounted() {
+    //     this.isActive = this.selected;
+    //  }
  }
 
 </script>
