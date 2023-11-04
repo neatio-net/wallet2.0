@@ -13,21 +13,60 @@
         <div class="hero__title">
           {{ address }}
         </div>
+        <div class="box-btn">
+          <div class="box7 box66" v-show="address !== null">
+          <button class="sendButton" id="rpp1" @click="swStake">Send</button>
+        </div>
 
-        <!-- <div class="box-btn">
-          <div class="box7" v-show="address !== null">
-          <button class="ripplex" id="rpp1" @click="swStake">Send</button>
-        </div>
+        <label class="switch" role="button" @click="swStake">
+    <input
+      type="checkbox"
+      :value="active"
+      v-model="checked"
+      @change="swStake"
+    />
+    <div
+      class="circle"
+      :class="{
+        'circle-on': checked,
+        'circle-off': !checked
+      }"
+    >
+      <span>{{ label }}</span>
+    </div>
+  </label>
+
         <div class="box8" v-show="address !== null">
-          <button class="ripplex" id="rpp2" @click="swStake">Stake</button>
+          <button class="stakeButton" id="rpp2" @click="swStake">Stake</button>
         </div>
-        </div> -->
-  
-    <Tabs>
+        </div>
+<div class="box0" v-show="address === null">
+  <div class="hero__wallet-description" v-show="address === null">
+        {{ $t("Here you can access your Neatio wallet.") }}
+      </div>
+
+      <div class="hero__title" v-show="address === null">
+        <input
+          type="password"
+          class="hero__inputs"
+          v-model="keyInput"
+          placeholder=" Enter Your Private Key"
+        />
+      </div>
+
+      <div class="hero__warn" v-show="address == null">{{ keyError }}</div>
+      <div class="hero__title" v-show="address == null">
+        <div class="hero__title-ks">
+          <button class="ripple" @click="importKey">IMPORT</button>
+        </div>
+      </div>
+</div>
+
+
 
     
-     <Tab name="transfer" >
-    <div class="box1" id="box11" >
+
+    <div class="box1 box66" id="box11" v-show="address !== null">
       <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
@@ -111,12 +150,11 @@
         </div>
       </div>
     </div>
-    </Tab>
 
 
- <Tab name="stakex">
 
-    <div class="box2" id="box22" >
+
+    <div hidden class="box2" id="box22" v-show="address !== null"  >
       <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
@@ -200,8 +238,7 @@
         </div>
       </div>
     </div>
-  </Tab>
-    </Tabs>
+ 
   </div>
 </template>
 
@@ -215,15 +252,17 @@ const Utils = require("nio-api").utils;
 const URL = "https://rpc.neatio.net";
 
 import axios from "axios";
-import Tab from "@/components/Tab";
-import Tabs from "@/components/Tabs";
+
 
 export default {
   name: "SendPK",
-  components: {
-      Tab,
-      Tabs
-  },
+
+  // props: {
+  //     dataOn: String,
+  //     dataOff: String,
+  //     active: Number,
+  // },
+
   data() {
     return {
       keyInput: null,
@@ -236,8 +275,17 @@ export default {
       addressToSend: null,
       keyError: null,
       txHash: null,
+      checked: true,
+      label: "Send",
+      active: 1,
+      // dataOn: "Send",
+      // dataOff: 'Stake'
 
     };
+  },
+  mounted() {
+    this.checked = Boolean(this.active);
+    this.update();
   },
 
   methods: {
@@ -274,7 +322,9 @@ export default {
       }
     },
 
-
+    update() {
+      this.label = this.checked ? this.dataOn : this.dataOff;
+    },
 
     async neatSend() {
       const userAccount = {
@@ -317,7 +367,7 @@ export default {
                 }
                 
             }
-            
+    
 
      },
 
