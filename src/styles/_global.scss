@@ -132,6 +132,18 @@ button {
 	outline: none;
   } 
 
+button2 {
+	border: none;
+	padding: 10px 17px;
+	font-size: 6rem;
+
+	font-family: Anita;
+	cursor: pointer;
+	color: #000 ;
+	background-color: linear-gradient(to top, #004e92, #000a6196,);
+	outline: none;
+  } 
+
 
 
 .content-container {
@@ -166,6 +178,9 @@ button {
 	transition: background 0.4s;
 	padding-top: 10px;
     color: #fff;
+	background-color: #0575E6;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 	
   }
 
@@ -175,6 +190,9 @@ button {
 	transition: background 0.4s;
 	padding-top: 10px;
 	color: #fff;
+	background-color: #6441A5;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
   }
 
 
