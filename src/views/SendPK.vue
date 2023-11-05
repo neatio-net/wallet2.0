@@ -6,38 +6,51 @@
         <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
       </div>
     </div>
-
-    <div class="hero__subTitle2" v-show="address !== null">
-          Address
+    <div class="hero__title33">
+ <div v-show="balance == null && address !== null">Loading Balance</div>
+          <div v-show="balance == null && address !== null">
+            <div class="breeding-rhombus-spinner">
+              <div class="rhombus child-1"></div>
+              <div class="rhombus child-2"></div>
+              <div class="rhombus child-3"></div>
+              <div class="rhombus child-4"></div>
+              <div class="rhombus child-5"></div>
+              <div class="rhombus child-6"></div>
+              <div class="rhombus child-7"></div>
+              <div class="rhombus child-8"></div>
+              <div class="rhombus big"></div>
+            </div>
+          </div>
         </div>
-        <div class="hero__title">
+
+<!-- 
+       <div class="hero__title" v-show="balance !== null">Balance</div> -->
+
+    <div class="hero__bal" v-show="balance !== null">
+          {{ balance }} <span class="hero__neat">NIO</span>
+          <div class="wallet-header" v-show="address !== null">
+      <div class="hero__titlex">
           {{ address }}
         </div>
-        <div class="box-btn">
-          <div class="box7 box66" v-show="address !== null">
-          <button class="sendButton" id="rpp1" @click="swStake">Send</button>
+    </div>
         </div>
 
-        <label class="switch" role="button" @click="swStake">
-    <input
-      type="checkbox"
-      :value="active"
-      v-model="checked"
-      @change="swStake"
-    />
-    <div
-      class="circle"
-      :class="{
-        'circle-on': checked,
-        'circle-off': !checked
-      }"
-    >
-      <span>{{ label }}</span>
-    </div>
-  </label>
+
+
+
+
+
+
+        <div class="box-btn">
+          <div class="box7" v-show="address !== null">
+          <button2 class="sendButton" id="rpp1" @click="swStake">Send</button2>
+        </div>
+
+
+
 
         <div class="box8" v-show="address !== null">
-          <button class="stakeButton" id="rpp2" @click="swStake">Stake</button>
+          <button2 class="stakeButton" id="rpp2" @click="swStake">Stake</button2>
         </div>
         </div>
 <div class="box0" v-show="address === null">
@@ -66,7 +79,7 @@
 
     
 
-    <div class="box1 box66" id="box11" v-show="address !== null">
+    <div class="box1" id="box11" v-show="address !== null">
       <div class="hero__wallet-description" v-show="address == null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
@@ -87,37 +100,8 @@
         </div>
       </div>
 
-      <div class="hero__walletInfo" v-show="address !== null">
-        <!-- <div class="hero__subTitle2" v-show="address !== null">
-          WALLET ADDRESS
-        </div>
-        <div class="hero__title">
-          {{ address }}
-        </div> -->
-        <div class="hero__title">
-          <div v-show="balance == null && address !== null">
-            <div class="breeding-rhombus-spinner">
-              <div class="rhombus child-1"></div>
-              <div class="rhombus child-2"></div>
-              <div class="rhombus child-3"></div>
-              <div class="rhombus child-4"></div>
-              <div class="rhombus child-5"></div>
-              <div class="rhombus child-6"></div>
-              <div class="rhombus child-7"></div>
-              <div class="rhombus child-8"></div>
-              <div class="rhombus big"></div>
-            </div>
-          </div>
-        </div>
-        <div class="hero__subTitle2" v-show="balance !== null">
-          BALANCE
-        </div>
-        <div class="hero__bal" v-show="balance !== null">
-          {{ balance }} <span class="hero__neat">NIO</span>
-        </div>
-      </div>
 
-      <div class="hero__title" v-show="address !== null"></div>
+      <div class="hero__title22" v-show="address !== null">Destination</div>
       <div class="hero__title" v-show="address !== null">
         <input
           type="text"
@@ -155,71 +139,17 @@
 
 
     <div hidden class="box2" id="box22" v-show="address !== null"  >
-      <div class="hero__wallet-description" v-show="address == null">
-        {{ $t("Here you can access your Neatio wallet.") }}
-      </div>
 
-      <div class="hero__title" v-show="address == null">
-        <input
-          type="password"
-          class="hero__inputs"
-          v-model="keyInput"
-          placeholder=" Enter Your Private Key"
-        />
-      </div>
-
-      <div class="hero__warn" v-show="address == null">{{ keyError }}</div>
-      <div class="hero__title" v-show="address == null">
-        <div class="hero__title-ks">
-          <button class="ripple" @click="importKey">IMPORT</button>
-        </div>
-      </div>
-
-      <div class="hero__walletInfo" v-show="address !== null">
-        <!-- <div class="hero__subTitle2" v-show="address !== null">
-          WALLET ADDRESS
-        </div>
-        <div class="hero__title">
-          {{ address }}
-        </div> -->
-        <div class="hero__title">
-          <div v-show="balance == null && address !== null">
-            <div class="breeding-rhombus-spinner">
-              <div class="rhombus child-1"></div>
-              <div class="rhombus child-2"></div>
-              <div class="rhombus child-3"></div>
-              <div class="rhombus child-4"></div>
-              <div class="rhombus child-5"></div>
-              <div class="rhombus child-6"></div>
-              <div class="rhombus child-7"></div>
-              <div class="rhombus child-8"></div>
-              <div class="rhombus big"></div>
-            </div>
-          </div>
-        </div>
-        <div class="hero__subTitle2" v-show="balance !== null">
-          BALANCE
-        </div>
-        <div class="hero__bal" v-show="balance !== null">
-          {{ balance }} <span class="hero__neat">NIO</span>
-        </div>
-      </div>
-
-      <div class="hero__title" v-show="address !== null"></div>
-      <div class="hero__title" v-show="address !== null">
-        <input
-          type="text"
-          class="hero__input1"
-          v-model="addressToSend"
-          placeholder="Address"
-        />
-      </div>
+      <div class="hero__title23" v-show="address !== null">Disclaimer!</div>
+      <div class="hero__subTitle33" v-show="address !== null">
+        Please note that Neatio epoch is 24h, thus your coins will be locked and start generate rewards
+         after we enter the next epoch that can take up to 24h.</div>
       <div class="hero__title" v-show="address !== null">
         <input
           type="text"
           class="hero__input2"
           v-model="amountToSend"
-          placeholder="Amount"
+          placeholder="Amount to stake"
         />
       </div>
       <div class="hero__title" v-show="address !== null">
@@ -254,14 +184,10 @@ const URL = "https://rpc.neatio.net";
 import axios from "axios";
 
 
+
 export default {
   name: "SendPK",
 
-  // props: {
-  //     dataOn: String,
-  //     dataOff: String,
-  //     active: Number,
-  // },
 
   data() {
     return {
@@ -278,15 +204,13 @@ export default {
       checked: true,
       label: "Send",
       active: 1,
-      // dataOn: "Send",
-      // dataOff: 'Stake'
 
     };
   },
-  mounted() {
-    this.checked = Boolean(this.active);
-    this.update();
-  },
+  // mounted() {
+  //   this.checked = Boolean(this.active);
+  //   this.update();
+  // },
 
   methods: {
     importKey() {
@@ -360,6 +284,7 @@ export default {
                 if (document.getElementById('box11').style.display == 'none') {
                     document.getElementById('box11').style.display = 'block';
                     document.getElementById('box22').style.display = 'none';
+                    
                 }
                 else {
                     document.getElementById('box11').style.display = 'none';
@@ -367,7 +292,11 @@ export default {
                 }
                 
             }
-    
+            
+         
+
+
+   
 
      },
 
