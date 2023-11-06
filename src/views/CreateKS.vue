@@ -1,7 +1,7 @@
 <template>
   <div class="body-container">
     <div class="hero__title-page">{{ $t("pages.create.pageName") }}</div>
-    <div class="box1">
+    <div class="box0">
     <div class="hero__subTitle2">Please make sure you are using</div>
     <div class="hero__subTitle3">
       <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
