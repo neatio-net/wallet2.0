@@ -6,55 +6,51 @@
         <b-icon-lock-fill></b-icon-lock-fill> https://wallet.neatio.net
       </div>
     </div>
+    
     <div class="hero__title33">
- <div v-show="balance == null && address !== null">Loading Balance</div>
-          <div v-show="balance == null && address !== null">
-            <div class="breeding-rhombus-spinner">
-              <div class="rhombus child-1"></div>
-              <div class="rhombus child-2"></div>
-              <div class="rhombus child-3"></div>
-              <div class="rhombus child-4"></div>
-              <div class="rhombus child-5"></div>
-              <div class="rhombus child-6"></div>
-              <div class="rhombus child-7"></div>
-              <div class="rhombus child-8"></div>
-              <div class="rhombus big"></div>
-            </div>
-          </div>
+      <div v-show="balance == null && address !== null">Loading Balance</div>
+      <div v-show="balance == null && address !== null">
+        <div class="breeding-rhombus-spinner">
+          <div class="rhombus child-1"></div>
+          <div class="rhombus child-2"></div>
+          <div class="rhombus child-3"></div>
+          <div class="rhombus child-4"></div>
+          <div class="rhombus child-5"></div>
+          <div class="rhombus child-6"></div>
+          <div class="rhombus child-7"></div>
+          <div class="rhombus child-8"></div>
+          <div class="rhombus big"></div>
         </div>
-
-<!-- 
-       <div class="hero__title" v-show="balance !== null">Balance</div> -->
+      </div>
+    </div>
 
     <div class="hero__bal" v-show="balance !== null">
+      <div>
+        <div class="test-bal">
           {{ balance }} <span class="hero__neat">NIO</span>
-          <div class="wallet-header" v-show="address !== null">
-      <div class="hero__titlex">
-          {{ address }}
         </div>
+
+        <div class="wallet-header" v-show="address !== null">
+          <div class="hero__titlex">
+            {{ address }}
+          </div>
+        </div>
+      </div>
     </div>
-        </div>
+
+    <div class="box-btn">
+      <div class="box7" v-show="address !== null">
+        <button2 class="sendButton" id="rpp1" @click="swStake">Send</button2>
+      </div>
+
+      <div class="box8" v-show="address !== null">
+        <button2 class="stakeButton" id="rpp2" @click="swStake">Stake</button2>
+      </div>
+    </div>
 
 
-
-
-
-
-
-        <div class="box-btn">
-          <div class="box7" v-show="address !== null">
-          <button2 class="sendButton" id="rpp1" @click="swStake">Send</button2>
-        </div>
-
-
-
-
-        <div class="box8" v-show="address !== null">
-          <button2 class="stakeButton" id="rpp2" @click="swStake">Stake</button2>
-        </div>
-        </div>
-<div class="box0" v-show="address === null">
-  <div class="hero__wallet-description" v-show="address === null">
+    <div class="box0" v-show="address === null">
+      <div class="hero__wallet-description" v-show="address === null">
         {{ $t("Here you can access your Neatio wallet.") }}
       </div>
 
@@ -73,11 +69,7 @@
           <button class="ripple" @click="importKey">IMPORT</button>
         </div>
       </div>
-</div>
-
-
-
-    
+    </div>
 
     <div class="box1" id="box11" v-show="address !== null">
       <div class="hero__wallet-description" v-show="address == null">
@@ -99,7 +91,6 @@
           <button class="ripple" @click="importKey">IMPORT</button>
         </div>
       </div>
-
 
       <div class="hero__title22" v-show="address !== null">Destination</div>
       <div class="hero__title" v-show="address !== null">
@@ -125,8 +116,7 @@
       </div>
 
       <div class="hero__title" v-show="txHash !== null">
-        Sent!
-        <div class="hero__subTitle2" v-show="txHash !== null">
+         <div class="hero__subTitle2" v-show="txHash !== null">
           Transaction Hash ID is:
         </div>
         <div class="hero__subTitle3" v-show="txHash !== null">
@@ -135,15 +125,13 @@
       </div>
     </div>
 
-
-
-
-    <div hidden class="box2" id="box22" v-show="address !== null"  >
-
+    <div hidden class="box2" id="box22" v-show="address !== null">
       <div class="hero__title23" v-show="address !== null">Disclaimer!</div>
       <div class="hero__subTitle33" v-show="address !== null">
-        Please note that Neatio epoch is 24h, thus your coins will be locked and start generate rewards
-         after we enter the next epoch that can take up to 24h.</div>
+        Please note that Neatio operates on a 24-hour epoch. Your coins will
+        start generating rewards on the next epoch and unstaking may take up to
+        24 hours.
+      </div>
       <div class="hero__title" v-show="address !== null">
         <input
           type="text"
@@ -168,12 +156,10 @@
         </div>
       </div>
     </div>
- 
   </div>
 </template>
 
 <script>
-
 const Account = require("nio-api").account;
 const Transaction = require("nio-api").transaction;
 const RPC = require("nio-api").rpc;
@@ -183,11 +169,8 @@ const URL = "https://rpc.neatio.net";
 
 import axios from "axios";
 
-
-
 export default {
   name: "SendPK",
-
 
   data() {
     return {
@@ -204,13 +187,8 @@ export default {
       checked: true,
       label: "Send",
       active: 1,
-
     };
   },
-  // mounted() {
-  //   this.checked = Boolean(this.active);
-  //   this.update();
-  // },
 
   methods: {
     importKey() {
@@ -226,6 +204,7 @@ export default {
         this.addry = `${this.address.substr(0, 6)}...${this.address.slice(-4)}`;
         this.privateKey = wallet.privateKey;
         const address = this.address;
+
         const DATA = {
           jsonrpc: "2.0",
           method: "neat_getBalance",
@@ -238,9 +217,7 @@ export default {
             .post(URL, DATA, { "Content-type": "application/json" })
             .then(
               (response) =>
-                (this.balance = Utils.toNio(
-                  Nat.toString(response.data.result)
-                ))
+                (this.balance = Utils.toNio(Nat.toString(response.data.result)))
             );
         }, 3500);
       }
@@ -276,34 +253,21 @@ export default {
       this.txHash = txHash;
     },
 
-    swStake()  {
-  
-
-            if (document.getElementById('box11')) {
-
-                if (document.getElementById('box11').style.display == 'none') {
-                    document.getElementById('box11').style.display = 'block';
-                    document.getElementById('box22').style.display = 'none';
-                    
-                }
-                else {
-                    document.getElementById('box11').style.display = 'none';
-                    document.getElementById('box22').style.display = 'block';
-                }
-                
-            }
-            
-         
-
-
-   
-
-     },
+    swStake() {
+      if (document.getElementById("box11")) {
+        if (document.getElementById("box11").style.display == "none") {
+          document.getElementById("box11").style.display = "block";
+          document.getElementById("box22").style.display = "none";
+        } else {
+          document.getElementById("box11").style.display = "none";
+          document.getElementById("box22").style.display = "block";
+        }
+      }
+    },
 
     neatStake() {
       // code
-    }
-
+    },
   },
 };
 </script>
