@@ -45,6 +45,12 @@
         </div>
       </div>
     </div>
+    <div class="wallet-terms">
+      By using this application you agree to the
+      <router-link to="/terms"
+        ><button1 class="terms-of-use">Terms Of Use.</button1></router-link
+      >.
+    </div>
   </div>
 </template>
 
