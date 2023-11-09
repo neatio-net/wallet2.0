@@ -8,7 +8,7 @@
     </div>
     
     <div class="hero__title33">
-      <div v-show="balance == null && address !== null">Loading Balance</div>
+      <div class="load-text" v-show="balance == null && address !== null">Loading Balance </div>
       <div v-show="balance == null && address !== null">
         <div class="breeding-rhombus-spinner">
           <div class="rhombus child-1"></div>
@@ -117,11 +117,9 @@
 
       <div class="hero__title" v-show="txHash !== null">
          <div class="hero__subTitle2" v-show="txHash !== null">
-          Transaction Hash ID is:
+          Transaction Hash ID is: {{ txHash }}
         </div>
-        <div class="hero__subTitle3" v-show="txHash !== null">
-          <a :href="`https://scan.neatio.net/tx/${txHash}`">View TX</a>
-        </div>
+
       </div>
     </div>
 
@@ -136,7 +134,7 @@
         <input
           type="text"
           class="hero__input2"
-          v-model="amountToSend"
+          v-model="amountToStake"
           placeholder="Amount to stake"
         />
       </div>
@@ -147,13 +145,11 @@
       </div>
 
       <div class="hero__title" v-show="txHash !== null">
-        Sent!
+        Coin sent to stake!
         <div class="hero__subTitle2" v-show="txHash !== null">
-          Transaction Hash ID is:
+          Transaction Hash ID is: {{ txHash }}
         </div>
-        <div class="hero__subTitle3" v-show="txHash !== null">
-          <a :href="`https://scan.neatio.net/tx/${txHash}`">View TX</a>
-        </div>
+
       </div>
     </div>
   </div>
@@ -162,6 +158,7 @@
 <script>
 const Account = require("nio-api").account;
 const Transaction = require("nio-api").transaction;
+const Abi = require("nio-api").abi;
 const RPC = require("nio-api").rpc;
 const Nat = require("nio-api").nat;
 const Utils = require("nio-api").utils;
@@ -181,6 +178,7 @@ export default {
       sending: null,
       transactionHash: null,
       amountToSend: null,
+      amountToStake: null,
       addressToSend: null,
       keyError: null,
       txHash: null,
@@ -227,6 +225,33 @@ export default {
       this.label = this.checked ? this.dataOn : this.dataOff;
     },
 
+    getBalanceDetail() {
+      const address = this.address;
+      const valData = {
+        jsonrpc: "2.0",
+        method: "neat_getBalanceDetail",
+        params: [`${address}`, "latest", true],
+        id: 1,
+      };
+      axios
+        .post(URL, valData)
+        .then((response) => {
+          (this.fullbalance = Utils.toNio(
+            Nat.toString(response.data.result.balance)
+          )),
+            (this.staking = Utils.toNio(
+              Nat.toString(response.data.result.delegateBalance)
+            )),
+            (this.rewards = Utils.toNio(
+              Nat.toString(response.data.result.rewardBalance)
+            ));
+          console.log(this.staking);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    },
+
     async neatSend() {
       const userAccount = {
         address: this.address,
@@ -265,9 +290,65 @@ export default {
       }
     },
 
-    neatStake() {
-      // code
+    async neatStake() {
+
+      const userAccount = {
+        address: this.address,
+        privateKey: this.privateKey,
+      };
+      const amount = this.amountToStake;
+      const send = RPC(URL);
+      const contractMethod = Abi.encodeParams(["address"], ["Nio3BHxKwCW65jRysbsBNh454h6XrPuK"])
+      const validatorData = Utils.sha3("Delegate(address)").substr(2, 8);
+      const nonce = await send("neat_getTransactionCount", [
+        userAccount.address,
+        "latest",
+      ]);
+      const tx = {
+        chainId: Nat.fromString("1"),
+        nonce: Nat.fromString(nonce),
+        gasPrice: Nat.fromString("10000000000"),
+        gas: Nat.fromString("1000000"),
+        to: Utils.stringToHex("Nio33MintingSmartContractAddress"),
+        value: Nat.fromString(Utils.fromNio(amount)),
+        data: contractMethod + validatorData.substring(2),
+      };
+      const signature = Transaction.sign(tx, userAccount);
+      const txHash = await send("neat_sendRawTransaction", [signature]);
+      this.txHash = txHash;
+      console.log(txHash);
     },
+
+    async neatClaim() {
+      const userAccount = {
+        address: this.address,
+        privateKey: this.privateKey,
+      };
+      const send = RPC(URL);
+      const contractMethod = Abi.methodID("WithdrawReward", ["address"]);
+      const validatorData = Abi.encodeParams(
+        ["address"],
+        [userAccount.address]
+      );
+      const nonce = await send("neat_getTransactionCount", [
+        userAccount.address,
+        "latest",
+      ]);
+      const tx = {
+        chainId: Nat.fromString("1"),
+        nonce: Nat.fromString(nonce),
+        gasPrice: Nat.fromString("10000000"),
+        gas: Nat.fromString("10000000"),
+        to: Utils.stringToHex("Nio33MintingSmartContractAddress"),
+        value: "0x0",
+        data: contractMethod + validatorData.substring(2),
+      };
+      const signature = Transaction.sign(tx, userAccount);
+      const txHash = await send("neat_sendRawTransaction", [signature]);
+      this.txHash = txHash;
+    },
+
+
   },
 };
 </script>
