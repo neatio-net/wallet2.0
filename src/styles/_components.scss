@@ -225,6 +225,7 @@
     font-weight: 360;
     line-height: 1.3;
     margin-bottom: 60px;
+    margin-top: -3.5em;
     position: relative;
     color: #fff;
     align-items: center;
@@ -1287,6 +1288,9 @@ $toggle-dis: $w - $circle - 2;
   }
 }
 
+.load-text{
+  margin-bottom: 20px;
+}
 .header-section {
   padding-top: 100px;
   width: 100%;
